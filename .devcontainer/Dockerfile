@@ -16,3 +16,4 @@ RUN bash /tmp/library-scripts/powershell-debian.sh \
 
 # TODO Un-hardcode the username.
 COPY scripts/home/Microsoft.PowerShell_profile.ps1 /home/vscode/.config/powershell/Microsoft.PowerShell_profile.ps1
+COPY scripts/home/Microsoft.PowerShell_profile.ps1 /home/vscode/.config/powershell/Microsoft.VSCode_profile.ps1

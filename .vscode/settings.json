@@ -1,0 +1,8 @@
+{
+    "terminal.integrated.profiles.linux": {
+        "PowerShell -NoProfile": {
+            "path": "/usr/bin/pwsh",
+            "args": ["/nologo"]
+        }
+    },
+}

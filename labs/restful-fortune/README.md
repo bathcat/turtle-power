@@ -26,7 +26,7 @@ is a sensitive one.)
 
 
 ## Requirements
-* Use the `requests` library to fetch JSON data
+* Use the `Invoke-RestMethod` command to fetch JSON data
 * Extract the meaningful content 
 * Display on the terminal
 
@@ -37,16 +37,6 @@ is a sensitive one.)
 
 
 
-
-
-
-
-
-
-
-## Hints
-* Read up on [requests](https://requests.readthedocs.io/en/master/)
-* Good overview [here](https://realpython.com/api-integration-in-python/)
 
 
 

@@ -1,0 +1,17 @@
+function Get-Message($i) {
+  if( ($i % 3 -eq 0) -and ($i % 5 -eq 0)  ){
+      return 'fizzbuzz';
+  }
+
+  if( $i % 3 -eq 0  ){
+      return 'fizz';
+  }
+
+  if( $i % 5 -eq 0  ){
+      return 'buzz';
+  }
+
+  return [string]$i;
+}
+
+1..100 | %{Get-Message $_}

@@ -14,6 +14,11 @@ COPY scripts/powershell-debian.sh /tmp/library-scripts/
 RUN bash /tmp/library-scripts/powershell-debian.sh \
     && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
 
+# Setup
+COPY scripts/environment.ps1 /tmp/library-scripts/
+RUN pwsh /tmp/library-scripts/environment.ps1 \
+    && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
+
 # TODO Un-hardcode the username.
 COPY scripts/profile.ps1 /home/vscode/.config/powershell/Microsoft.PowerShell_profile.ps1
 COPY scripts/profile.ps1 /home/vscode/.config/powershell/Microsoft.VSCode_profile.ps1

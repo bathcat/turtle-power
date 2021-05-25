@@ -1,42 +1,31 @@
 class Point{
     [int]$latitude
     [int]$longitude
-
-    Point($latitude,$longitude){
-        $this.latitude = $latitude
-        $this.longitude = $longitude
-    }
 }
 
 function Get-CurrentLocation(){
     $uri = 'http://www.geoplugin.net/json.gp'
     $json =  Invoke-RestMethod $uri
-    return [Point]::new(
-        $json.geoplugin_latitude,
-        $json.geoplugin_longitude
-    )
+    return [Point]@{
+        latitude=$json.geoplugin_latitude;
+        longitude=$json.geoplugin_longitude
+    }
 }
 
 class GridLocation{
     [int] $x
     [int] $y
     [string] $office
-
-    GridLocation($x,$y,$office){
-        $this.x = $x
-        $this.y = $y
-        $this.office=$office
-    }
 }
 
 function Get-GridLocation([Point]$point){
     $uri = "https://api.weather.gov/points/$($point.latitude),$($point.longitude)"
     $json = Invoke-RestMethod $uri
-    return [GridLocation]::new(
-        $json.properties.gridX,
-        $json.properties.gridY,
-        $json.properties.cwa
-    )
+    return [GridLocation]@{
+        x=$json.properties.gridX;
+        y=$json.properties.gridY;
+        office=$json.properties.cwa
+    }
 }
 
 function Get-Forecast([GridLocation]$location){
@@ -46,5 +35,5 @@ function Get-Forecast([GridLocation]$location){
 }
 
 $here = Get-CurrentLocation
-$hereOnGrid = Get-GridLocation $here
+$hereOnGrid=Get-GridLocation $here
 Get-Forecast $hereOnGrid

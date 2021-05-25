@@ -8,7 +8,7 @@ function Get-CurrentLocation(){
     $json =  Invoke-RestMethod $uri
     return [Point]@{
         latitude=$json.geoplugin_latitude;
-        longitude=$json.geoplugin_longitude
+        longitude=$json.geoplugin_longitude;
     }
 }
 
@@ -24,7 +24,7 @@ function Get-GridLocation([Point]$point){
     return [GridLocation]@{
         x=$json.properties.gridX;
         y=$json.properties.gridY;
-        office=$json.properties.cwa
+        office=$json.properties.cwa;
     }
 }
 

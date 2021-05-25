@@ -1,14 +1,31 @@
-$limit = 4e6
+$limit = 4000000
 
-function Get-Fibs(){
-  return 1, 2, 3, 5, 8, 13, 21, 34, 55, 89
+
+function Get-Fibs($count){
+  $previous = 1
+  $current = 2
+
+  if($count -eq 1){
+    return @($previous)
+  }
+
+  if($count -eq 2){
+    return $previous, $current
+  }
+
+  $numbers = @()
+  for ($i = 0; $i -lt $count; $i += 1) {
+    $numbers += $previous
+    $next = $current + $previous
+    $previous = $current
+    $current = $next
+  }
+
+  return $numbers
 }
 
-function Get-Euler02Solution(){
-  $sum = 0
-  Get-fibs | %{$sum += $_}
-  return $sum
-}
 
-$solution = Get-Euler02Solution
-"Here is your answer: $solution"
+$sum = 0
+Get-Fibs 60 | ?{$_ -le $limit} | ?{$_ % 2 -eq 0} | %{$sum += $_}
+
+"Here is your answer: $sum"

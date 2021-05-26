@@ -1,31 +1,7 @@
-$limit = 4000000
+$path = './labs/log-analyzer/_assets/prod221.log'
 
-
-function Get-Fibs($count){
-  $previous = 1
-  $current = 2
-
-  if($count -eq 1){
-    return @($previous)
-  }
-
-  if($count -eq 2){
-    return $previous, $current
-  }
-
-  $numbers = @()
-  for ($i = 0; $i -lt $count; $i += 1) {
-    $numbers += $previous
-    $next = $current + $previous
-    $previous = $current
-    $current = $next
-  }
-
-  return $numbers
+function Get-Report(){
+  return 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a placerat sapien.'
 }
 
-
-$sum = 0
-Get-Fibs 60 | ?{$_ -le $limit} | ?{$_ % 2 -eq 0} | %{$sum += $_}
-
-"Here is your answer: $sum"
+Get-Item $path | Get-Content

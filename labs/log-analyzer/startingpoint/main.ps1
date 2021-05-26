@@ -1,14 +1,8 @@
-$limit = 4e6
+$path = './labs/log-analyzer/_assets/prod221.log'
 
-function Get-Fibs(){
-  return 1, 2, 3, 5, 8, 13, 21, 34, 55, 89
+function Get-Report(){
+  return 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a placerat sapien.'
 }
 
-function Get-Euler02Solution(){
-  $sum = 0
-  Get-fibs | %{$sum += $_}
-  return $sum
-}
+Get-Report
 
-$solution = Get-Euler02Solution
-"Here is your answer: $solution"

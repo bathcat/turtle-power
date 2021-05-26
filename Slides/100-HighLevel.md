@@ -66,3 +66,13 @@ git commit -m 'deploy'
 git push -f https://github.com/bathcat/bathcat.github.io +master
 ```
 
+---
+
+## Complaints
+
+---
+
+### Platforms Aren't the same
+* [`Get-ComputerInfo`](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-computerinfo?view=powershell-7.1)
+* `Get-Service`
+* WMI Stuff

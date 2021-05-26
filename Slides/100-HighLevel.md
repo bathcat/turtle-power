@@ -36,6 +36,17 @@ Get-Item ./src/content/ | Get-ChildItem -Recurse -Filter content.mdx | %{fix-sli
 
 ```
 
+---
+
+### Ergonomic
+* Verb-noun makes it easy to read
+  + Unlike dir, cat, set, grep
+* Help system 
+* Tab-completion
+* Windows terminal / VSCode
+
+--- 
+
 ### Useful
 
 ```pwsh

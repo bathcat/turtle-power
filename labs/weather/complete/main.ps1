@@ -3,7 +3,16 @@ class Point{
     [int]$longitude
 }
 
-function Get-CurrentLocation(){
+class GridLocation{
+    [int] $x
+    [int] $y
+    [string] $office
+}
+
+function Get-CurrentLocation{
+    [OutputType([Point])]
+    Param()
+
     $uri = 'http://www.geoplugin.net/json.gp'
     $json =  Invoke-RestMethod $uri
     return [Point]@{
@@ -12,13 +21,10 @@ function Get-CurrentLocation(){
     }
 }
 
-class GridLocation{
-    [int] $x
-    [int] $y
-    [string] $office
-}
+function Get-GridLocation{
+    [OutputType([GridLocation])]
+    Param([Point]$point)
 
-function Get-GridLocation([Point]$point){
     $uri = "https://api.weather.gov/points/$($point.latitude),$($point.longitude)"
     $json = Invoke-RestMethod $uri
     return [GridLocation]@{
@@ -28,7 +34,10 @@ function Get-GridLocation([Point]$point){
     }
 }
 
-function Get-Forecast([GridLocation]$location){
+function Get-Forecast{
+  [OutputType([string])]
+  Param([GridLocation]$location)
+
   $uri = "https://api.weather.gov/gridpoints/$($location.office)/$($location.x),$($location.y)/forecast"
   $json =  Invoke-RestMethod $uri
   return $json.properties.periods[0].shortForecast

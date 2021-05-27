@@ -68,6 +68,6 @@ function Read-Entry{
     severity = Read-Severity $logEntry;
     operation = Read-Operation $logEntry;
     message = Read-Message $logEntry;
-  }              
+  }
 }
 

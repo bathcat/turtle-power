@@ -12,5 +12,6 @@
 		"ms-vscode.powershell"
 	],
 
-	"remoteUser": "vscode"
+	"remoteUser": "vscode",
+	
 }

@@ -9,6 +9,16 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:${VARIANT}
 # From here:
 #    https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-7.1
 
+ARG USERNAME=vscode
+ENV HOME /home/$USERNAME
+
+RUN apt-get install -y sudo \
+    && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME && \
+    chmod 0440 /etc/sudoers.d/$USERNAME
+
+
+
+
 # PWSH
 COPY scripts/powershell-debian.sh /tmp/library-scripts/
 RUN bash /tmp/library-scripts/powershell-debian.sh \
@@ -22,3 +32,6 @@ RUN pwsh /tmp/library-scripts/environment.ps1 \
 # TODO Un-hardcode the username.
 COPY scripts/profile.ps1 /home/vscode/.config/powershell/Microsoft.PowerShell_profile.ps1
 COPY scripts/profile.ps1 /home/vscode/.config/powershell/Microsoft.VSCode_profile.ps1
+
+RUN chown -R vscode /home/vscode
+USER $USERNAME

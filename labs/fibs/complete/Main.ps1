@@ -26,6 +26,9 @@ function Get-Fibs($count){
 
 
 $sum = 0
-Get-Fibs 60 | ?{$_ -le $limit} | ?{$_ % 2 -eq 0} | %{$sum += $_}
+Get-Fibs 60 | 
+  ?{$_ -le $limit} | 
+  ?{$_ % 2 -eq 0} | 
+  %{$sum += $_}
 
 "Here is your answer: $sum"

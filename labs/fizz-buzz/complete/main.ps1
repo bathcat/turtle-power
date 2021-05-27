@@ -1,17 +1,25 @@
-function Get-Message($i) {
-  if( ($i % 3 -eq 0) -and ($i % 5 -eq 0)  ){
-      return 'fizzbuzz';
-  }
+function Get-Message {
+    [OutputType([string])]
+    Param(
+        [Parameter(ValueFromPipeline=$true)]
+        [int]$i
+    )
 
-  if( $i % 3 -eq 0  ){
-      return 'fizz';
-  }
+  process{
+    if( ($i % 3 -eq 0) -and ($i % 5 -eq 0)  ){
+        return 'fizzbuzz';
+    }
 
-  if( $i % 5 -eq 0  ){
-      return 'buzz';
-  }
+    if( $i % 3 -eq 0  ){
+        return 'fizz';
+    }
 
-  return [string]$i;
+    if( $i % 5 -eq 0  ){
+        return 'buzz';
+    }
+
+    return [string]$i;
+  }
 }
 
-1..100 | %{Get-Message $_}
+1..100 | Get-Message

@@ -75,7 +75,7 @@ Get-Variable profile
 ## Next, use a text editor to open that file--create it if it doesn't exist--
 ##    and add something like this:
 
-Write-Host "Hello Mr. Bloggs. Welcome to pwsh"
+Write-Information "Hello Mr. Bloggs. Welcome to pwsh"
 
 ## Finally, save your profile and open a new terminal to see your custom greeting.
 

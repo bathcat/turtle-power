@@ -1,4 +1,4 @@
-$path = './labs/log-analyzer/_assets/prod221.log'
+#$path = './labs/log-analyzer/_assets/prod221.log'
 
 class Entry{
   [string]$timestamp
@@ -15,15 +15,15 @@ function Read-Timestamp{
     [string]$logEntry
   )
 
-  [int]$day = $logEntry.Substring(0,2);
-  [int]$month = $logEntry.Substring(3,2);
-  [int]$hour = $logEntry.Substring(6,2);
-  [int]$minute = $logEntry.Substring(9,2);
-  [int]$second = $logEntry.Substring(12,2);
+  process{
+    [int]$day = $logEntry.Substring(0,2);
+    [int]$month = $logEntry.Substring(3,2);
+    [int]$hour = $logEntry.Substring(6,2);
+    [int]$minute = $logEntry.Substring(9,2);
+    [int]$second = $logEntry.Substring(12,2);
 
-
-  return Get-Date -Month $month -Day $day -Hour $hour -Minute $minute -Second $second
-
+    return Get-Date -Month $month -Day $day -Hour $hour -Minute $minute -Second $second
+  }
 }
 
 function Read-Severity{
@@ -32,8 +32,9 @@ function Read-Severity{
     [Parameter(ValueFromPipeline=$true)]
     [string]$logEntry
   )
-
-  return $logEntry.Substring(15,7).Trim();
+  process{
+    return $logEntry.Substring(15,7).Trim()
+  }
 }
 
 function Read-Operation{
@@ -42,8 +43,9 @@ function Read-Operation{
     [Parameter(ValueFromPipeline=$true)]
     [string]$logEntry
   )
-  return $logEntry.Substring(23).Replace(".","").Split(":")[0];
-                  
+  process{
+    return $logEntry.Substring(23).Replace(".","").Split(":")[0];
+  }        
 }
 
 function Read-Message{
@@ -52,8 +54,9 @@ function Read-Message{
     [Parameter(ValueFromPipeline=$true)]
     [string]$logEntry
   )
-  return $logEntry.Substring(23).Replace(".","").Split(":")[1].Trim();
-                  
+  process{
+    return $logEntry.Substring(23).Replace(".","").Split(":")[1].Trim();
+  }              
 }
 
 function Read-Entry{
@@ -63,11 +66,11 @@ function Read-Entry{
     [string]$logEntry
   )
   # TODO: Shouldn't I cast this to the class explicitly? I want to, but it borks up the tests...
-  return @{
+  process {return @{
     timestamp = Read-Timestamp $logEntry;
     severity = Read-Severity $logEntry;
     operation = Read-Operation $logEntry;
     message = Read-Message $logEntry;
-  }
+  }}
 }
 

@@ -75,4 +75,14 @@ git push -f https://github.com/bathcat/bathcat.github.io +master
 ### Platforms Aren't the same
 * [`Get-ComputerInfo`](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-computerinfo?view=powershell-7.1)
 * `Get-Service`
-* WMI Stuff
+* WMI/CIM Stuff
+* Scheduled jobs
+* Remoting
+
+Note:
+* https://petri.com/5-things-to-know-about-powershell-core-on-linux
+
+---
+
+### Some things are kind of goofy
+

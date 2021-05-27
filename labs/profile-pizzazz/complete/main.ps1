@@ -16,4 +16,12 @@ New-Alias -Name 'which' -Value Get-CommandPath
 
 #---
 
+function Get-StaticProperties(){
+    $class = [System.Environment]
+    return $class | 
+        Get-Member -Static -MemberType Property | 
+        Select-Object -expand Name | 
+        % { "$_ = $($class::$_)" }
 
+}
+Get-StaticProperties

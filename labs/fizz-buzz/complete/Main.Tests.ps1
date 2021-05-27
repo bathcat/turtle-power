@@ -1,4 +1,6 @@
-
+BeforeAll {
+    . $PSCommandPath.Replace('.Tests.ps1','.ps1')
+}
 Describe 'Get-Message' {
     
     It 'Should be "11" for 11' {        

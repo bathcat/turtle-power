@@ -1,74 +1,78 @@
-class Point{
+class Point {
     [int]$latitude
     [int]$longitude
 }
 
-class GridLocation{
+class GridLocation {
     [int] $x
     [int] $y
     [string] $office
 }
 
-function Get-CurrentLocation{
+function Get-CurrentLocation {
     [OutputType([Point])]
     Param()
 
     $uri = 'http://www.geoplugin.net/json.gp'
-    $json =  Invoke-RestMethod $uri
+    $json = Invoke-RestMethod $uri
     return [Point]@{
-        latitude=$json.geoplugin_latitude;
-        longitude=$json.geoplugin_longitude;
+        latitude  = $json.geoplugin_latitude;
+        longitude = $json.geoplugin_longitude;
     }
 }
 
-function Get-GridLocationUri{
+function Get-GridLocationUri {
     [OutputType([string])]
     Param(
-        [Parameter(ValueFromPipeline=$true)]
+        [Parameter(ValueFromPipeline = $true)]
         [Point]$point
     )
-
-    return "https://api.weather.gov/points/$($point.latitude),$($point.longitude)"
+    process {
+        return "https://api.weather.gov/points/$($point.latitude),$($point.longitude)"
+    }
 }
 
 
-function Get-GridLocation{
+function Get-GridLocation {
     [OutputType([GridLocation])]
     Param(
-        [Parameter(ValueFromPipeline=$true)]
+        [Parameter(ValueFromPipeline = $true)]
         [Point]$point
     )
-
-    $json =  Invoke-RestMethod -Uri (Get-GridLocationUri $point)
-    return [GridLocation]@{
-        x=$json.properties.gridX;
-        y=$json.properties.gridY;
-        office=$json.properties.cwa;
+    process{
+        $json = Invoke-RestMethod -Uri (Get-GridLocationUri $point)
+        return [GridLocation]@{
+            x      = $json.properties.gridX;
+            y      = $json.properties.gridY;
+            office = $json.properties.cwa;
+        }
     }
 }
 
-function Get-ForecastUri{
+function Get-ForecastUri {
     [OutputType([string])]
     Param(
-        [Parameter(ValueFromPipeline=$true)]
+        [Parameter(ValueFromPipeline = $true)]
         [GridLocation]$location
     )
-  
-    return "https://api.weather.gov/gridpoints/$($location.office)/$($location.x),$($location.y)/forecast"
+    process {
+        return "https://api.weather.gov/gridpoints/$($location.office)/$($location.x),$($location.y)/forecast"
+    }
 }
   
 
-function Get-Forecast{
-  [OutputType([string])]
-  Param(
-      [Parameter(ValueFromPipeline=$true)]
-      [GridLocation]$location
-  )
-
-  $json =  Invoke-RestMethod -Uri (Get-ForecastUri $location)
-  return $json.properties.periods[0].shortForecast
+function Get-Forecast {
+    [OutputType([string])]
+    Param(
+        [Parameter(ValueFromPipeline = $true)]
+        [GridLocation]$location
+    )
+    process {
+        $json = Invoke-RestMethod -Uri (Get-ForecastUri $location)
+        return $json.properties.periods[0].shortForecast
+    }
 }
 
- Get-CurrentLocation | 
-    Get-GridLocation |
-        Get-ForecastUri 
+Get-CurrentLocation | 
+Get-GridLocation |
+Get-ForecastUri 

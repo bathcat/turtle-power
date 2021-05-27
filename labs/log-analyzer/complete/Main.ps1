@@ -7,9 +7,67 @@ class Entry{
   [string]$message
 }
 
-function Get-Report(){
-  return 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a placerat sapien.'
+
+function Read-Timestamp{
+  [OutputType([datetime])]
+  Param(
+    [Parameter(ValueFromPipeline=$true)]
+    [string]$logEntry
+  )
+
+  [int]$day = $logEntry.Substring(0,2);
+  [int]$month = $logEntry.Substring(3,2);
+  [int]$hour = $logEntry.Substring(6,2);
+  [int]$minute = $logEntry.Substring(9,2);
+  [int]$second = $logEntry.Substring(12,2);
+
+
+  return Get-Date -Month $month -Day $day -Hour $hour -Minute $minute -Second $second
+
 }
 
-Get-Item $path | Get-Content | ? {$_ -like '*WARN*'} | Write-Host -
+function Read-Severity{
+  [OutputType([string])]
+  Param(
+    [Parameter(ValueFromPipeline=$true)]
+    [string]$logEntry
+  )
+
+  return $logEntry.Substring(15,7).Trim();
+}
+
+function Read-Operation{
+  [OutputType([string])]
+  Param(
+    [Parameter(ValueFromPipeline=$true)]
+    [string]$logEntry
+  )
+  return $logEntry.Substring(23).Replace(".","").Split(":")[0];
+                  
+}
+
+function Read-Message{
+  [OutputType([string])]
+  Param(
+    [Parameter(ValueFromPipeline=$true)]
+    [string]$logEntry
+  )
+  return $logEntry.Substring(23).Replace(".","").Split(":")[1].Trim();
+                  
+}
+
+function Read-Entry{
+  [OutputType([Entry])]
+  Param(
+    [Parameter(ValueFromPipeline=$true)]
+    [string]$logEntry
+  )
+  # TODO: Shouldn't I cast this to the class explicitly? I want to, but it borks up the tests...
+  return @{
+    timestamp = Read-Timestamp $logEntry;
+    severity = Read-Severity $logEntry;
+    operation = Read-Operation $logEntry;
+    message = Read-Message $logEntry;
+  }              
+}
 

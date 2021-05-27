@@ -23,7 +23,10 @@ function Get-CurrentLocation{
 
 function Get-GridLocation{
     [OutputType([GridLocation])]
-    Param([Point]$point)
+    Param(
+        [Parameter(ValueFromPipeline=$true)]
+        [Point]$point
+    )
 
     $uri = "https://api.weather.gov/points/$($point.latitude),$($point.longitude)"
     $json = Invoke-RestMethod $uri
@@ -36,13 +39,16 @@ function Get-GridLocation{
 
 function Get-Forecast{
   [OutputType([string])]
-  Param([GridLocation]$location)
+  Param(
+      [Parameter(ValueFromPipeline=$true)]
+      [GridLocation]$location
+  )
 
   $uri = "https://api.weather.gov/gridpoints/$($location.office)/$($location.x),$($location.y)/forecast"
   $json =  Invoke-RestMethod $uri
   return $json.properties.periods[0].shortForecast
 }
 
-$here = Get-CurrentLocation
-$hereOnGrid=Get-GridLocation $here
-Get-Forecast $hereOnGrid
+Get-CurrentLocation | 
+   Get-GridLocation | 
+       Get-Forecast 

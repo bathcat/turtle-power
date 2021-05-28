@@ -15,6 +15,7 @@ function Get-CurrentLocation {
 
     $uri = 'http://www.geoplugin.net/json.gp'
     $json = Invoke-RestMethod $uri
+    ([string]$json) >> resp.json
     return [Point]@{
         latitude  = $json.geoplugin_latitude;
         longitude = $json.geoplugin_longitude;
@@ -75,4 +76,4 @@ function Get-Forecast {
 
 Get-CurrentLocation | 
 Get-GridLocation |
-Get-ForecastUri 
+Get-Forecast 

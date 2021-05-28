@@ -14,11 +14,30 @@ function Get-Fibs($count) {
   }
 }
 
+function Get-Sum{
+  [OutputType([string])]
+  Param(
+      [Parameter(ValueFromPipeline=$true)]
+      [int]$n
+  )
+  begin{
+    $sum=0
+  }
 
-$sum = 0
+  process{
+    $sum+=$n
+  }
+
+  end{
+    return $sum
+  }
+}
+
+
+"Here is your answer: "
+
 Get-Fibs 60 | 
 ? { $_ -le $limit } | 
 ? { $_ % 2 -eq 0 } | 
-% { $sum += $_ }
+Get-Sum
 
-"Here is your answer: $sum"

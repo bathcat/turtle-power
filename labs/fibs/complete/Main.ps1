@@ -33,11 +33,24 @@ function Get-Sum{
   }
 }
 
+filter Get-Evens{
+  if($_%2 -eq 0){
+    return $_
+  }
+}
+
+
+filter Get-InRange{
+  if($_ -le $limit){
+    return $_
+  }
+}
+
 
 "Here is your answer: "
 
 Get-Fibs 60 | 
-? { $_ -le $limit } | 
-? { $_ % 2 -eq 0 } | 
+Get-InRange | 
+Get-Evens | 
 Get-Sum
 

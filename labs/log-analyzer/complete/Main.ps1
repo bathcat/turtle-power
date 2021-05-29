@@ -74,19 +74,20 @@ function Read-Entry{
   }}
 }
 
+$styleElement = '<style>th{color:green;}</style>'
 function Build-Report{
 
   Get-Content $path | 
   Read-Entry | 
   Group-Object -Property "severity" -NoElement |
   Select-Object -Property Name, Count |
-  ConvertTo-Html |
+  ConvertTo-Html -Title 'Log Report' -PreContent $styleElement  |
   Out-File -FilePath './report.html' 
 
   try{
     invoke-item 'report.html'
   }
-  catch{
+  catch [System.ComponentModel.Win32Exception]{
     Write-Host "Unable to open web browser-- this happens with the docker thing."
     Write-Host "But your report is still there: report.html"
   }
@@ -94,3 +95,4 @@ function Build-Report{
 }
 
 
+Build-Report

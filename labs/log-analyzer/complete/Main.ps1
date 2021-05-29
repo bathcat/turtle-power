@@ -1,4 +1,4 @@
-#$path = './labs/log-analyzer/_assets/prod221.log'
+$path = './labs/log-analyzer/_assets/prod221.log'
 
 class Entry{
   [string]$timestamp
@@ -73,4 +73,24 @@ function Read-Entry{
     message = Read-Message $logEntry;
   }}
 }
+
+function Build-Report{
+
+  Get-Content $path | 
+  Read-Entry | 
+  Group-Object -Property "severity" -NoElement |
+  Select-Object -Property Name, Count |
+  ConvertTo-Html |
+  Out-File -FilePath './report.html' 
+
+  try{
+    invoke-item 'report.html'
+  }
+  catch{
+    Write-Host "Unable to open web browser-- this happens with the docker thing."
+    Write-Host "But your report is still there: report.html"
+  }
+
+}
+
 

@@ -16,13 +16,16 @@ function Read-Timestamp{
   )
 
   process{
-    [int]$day = $logEntry.Substring(0,2);
-    [int]$month = $logEntry.Substring(3,2);
-    [int]$hour = $logEntry.Substring(6,2);
-    [int]$minute = $logEntry.Substring(9,2);
-    [int]$second = $logEntry.Substring(12,2);
 
-    return Get-Date -Month $month -Day $day -Hour $hour -Minute $minute -Second $second
+    $params = @{
+      Day = $logEntry.Substring(0,2);
+      Month = $logEntry.Substring(3,2);
+      Hour = $logEntry.Substring(6,2);
+      Minute = $logEntry.Substring(9,2);
+      Second = $logEntry.Substring(12,2);
+    }
+
+    return Get-Date @params
   }
 }
 
@@ -74,25 +77,34 @@ function Read-Entry{
   }}
 }
 
-$styleElement = '<style>th{color:green;}</style>'
 function Build-Report{
+  $folder = 'dist'
+  $file = Join-Path $folder 'report.html'
+
+  if(-not (Test-Path $folder)){
+    New-Item -Path $folder -ItemType Directory | Out-Null
+  }
+
+  $htmlProps = @{
+    PreContent='<style>th{color:green;}</style>';
+    Title = 'Log Report'
+  }
 
   Get-Content $path | 
-  Read-Entry | 
-  Group-Object -Property "severity" -NoElement |
-  Select-Object -Property Name, Count |
-  ConvertTo-Html -Title 'Log Report' -PreContent $styleElement  |
-  Out-File -FilePath './report.html' 
+    Read-Entry | 
+    Group-Object -Property "severity" -NoElement |
+    Select-Object -Property Name, Count |
+    ConvertTo-Html @htmlProps  |
+    Out-File -FilePath $file
 
   try{
-    invoke-item 'report.html'
+    Invoke-Item $file
   }
   catch [System.ComponentModel.Win32Exception]{
-    Write-Host "Unable to open web browser-- this happens with the docker thing."
-    Write-Host "But your report is still there: report.html"
+    Write-Verbose "Unable to open web browser-- this happens with the docker thing."
+    Write-Verbose "But your report is still there: report.html"
   }
 
 }
-
 
 Build-Report

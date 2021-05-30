@@ -17,7 +17,7 @@ New-Alias -Name 'which' -Value Get-CommandPath
 #---
 
 function Get-StaticProperties(){
-    $class = [System.Environment]
+    $class = [System.Environment]dock
     return $class | 
         Get-Member -Static -MemberType Property | 
         Select-Object -expand Name | 

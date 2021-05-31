@@ -18,6 +18,17 @@ Here's [problem #2](https://projecteuler.net/problem=2):
 > _even-valued_ terms.
 
 
+## Requirements
+1. Get the right output. (I think it's 4613732.)
+2. Write tests as time allows.
+
+
+
+
+
+
+
+
 
 
 ## Hints

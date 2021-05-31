@@ -1,4 +1,3 @@
-$path = './labs/log-analyzer/_assets/prod221.log'
 
 class Entry{
   [string]$timestamp

@@ -1,5 +1,4 @@
-. $PSCommandPath.Replace('Main.ps1','Read-Entry.ps1')
-
+. $PSCommandPath.Replace('Build-Report.ps1','Read-Entry.ps1')
 
 function Build-Report{
   Param(
@@ -19,6 +18,8 @@ function Build-Report{
     Title = 'Log Report'
   }
 
+  Write-Verbose "Going through log file."
+
   Get-Content $path | 
     Read-Entry | 
     Group-Object -Property "severity" -NoElement |
@@ -26,12 +27,13 @@ function Build-Report{
     ConvertTo-Html @htmlProps  |
     Out-File -FilePath $file
 
+  Write-Verbose "Opening browser"
   try{
     Invoke-Item $file
   }
   catch [System.ComponentModel.Win32Exception]{
     Write-Verbose "Unable to open web browser-- this happens with the docker thing."
-    Write-Verbose "But your report is still there: report.html"
+    Write-Verbose "But your report is still there: $file"
   }
 
 }

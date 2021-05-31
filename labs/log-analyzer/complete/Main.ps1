@@ -1,4 +1,4 @@
-. $PSCommandPath.Replace('Main.ps1','Build-Report.ps1')
+. $PSCommandPath.Replace('Main.ps1','Write-Report.ps1')
 
 $VerbosePreference = "Continue"
-Build-Report './labs/log-analyzer/_assets/prod221.log'
+Write-Report './labs/log-analyzer/_assets/prod221.log'

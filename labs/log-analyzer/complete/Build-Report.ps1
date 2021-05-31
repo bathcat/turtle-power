@@ -6,9 +6,11 @@ function Build-Report{
       $logFile
   )
 
-  return Get-Content $logFile |
-    Read-Entry |
+  $entries = Get-Content $logFile | Read-Entry
+
+  return $entries |
     Group-Object -Property "severity" -NoElement |
-    Select-Object -Property Name, Count
+    Select-Object -Property Name, Count |
+    Sort-Object -Property Count -Descending
 
 }

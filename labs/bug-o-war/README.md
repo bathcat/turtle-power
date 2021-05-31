@@ -1,4 +1,5 @@
 # Lab: Bug-o-War
 
 ## Summary
-Lorem ipsum sic dolor.
+Distracted by their exams, hubris, and copious alcohol, the interns have introduced a number
+of bugs into your 

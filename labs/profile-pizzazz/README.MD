@@ -1,4 +1,4 @@
-# Lab: Pimp my profile
+# Lab: Profile Pizazz
 
 
 Lorem ipsum sic dolor

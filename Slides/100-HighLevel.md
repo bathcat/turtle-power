@@ -78,6 +78,8 @@ git push -f https://github.com/bathcat/bathcat.github.io +master
 * WMI/CIM Stuff
 * Scheduled jobs
 * Remoting
+* Commands on windows: 1603
+* Commands on ubuntu: 354
 
 Note:
 * https://petri.com/5-things-to-know-about-powershell-core-on-linux

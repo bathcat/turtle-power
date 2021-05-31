@@ -1,8 +1,5 @@
 . $PSCommandPath.Replace('Write-Report.ps1','Build-Report.ps1')
 
-
-
-
 function Write-Report{
   Param(
       [Parameter(Mandatory=$true)]
@@ -17,16 +14,9 @@ function Write-Report{
     New-Item -Path $reportFolder -ItemType Directory | Out-Null
   }
 
-  $htmlProps = @{
-    PreContent='<style>th{color:green;}</style>';
-    Title = 'Log Report'
-  }
-
   Write-Verbose "Going through log file."
 
-  Build-Report $logFile |
-    ConvertTo-Html @htmlProps |
-    Out-File -FilePath $file
+  Build-Report $logFile | Out-File -FilePath $file
 
   Write-Verbose "Opening browser"
   try{

@@ -34,3 +34,17 @@ function Get-CommandPath{
 New-Alias -Name 'which' -Value Get-CommandPath
 
 #---
+
+function Get-DriveSpace{
+    param()
+
+    return Get-CimInstance Win32_LogicalDisk |
+        Format-Table -Property DeviceID, VolumeName, Size, FreeSpace, @{Label = 'Use%'; Expression={(1-$_.FreeSpace/$_.Size).ToString("P")}}
+}
+
+New-Alias -Name 'df' -Value Get-DriveSpace
+
+#---
+
+
+

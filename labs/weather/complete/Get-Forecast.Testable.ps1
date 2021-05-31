@@ -74,6 +74,3 @@ function Get-Forecast {
     }
 }
 
-Get-CurrentLocation | 
-Get-GridLocation |
-Get-Forecast 

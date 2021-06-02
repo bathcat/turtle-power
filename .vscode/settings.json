@@ -5,6 +5,8 @@
   },
   "powershell.scriptAnalysis.settingsPath": ".vscode/analyzersettings.psd1",
   "powershell.scriptAnalysis.enable": true  ,
-  "powershell.codeFormatting.preset": "OTBS"
+  "powershell.codeFormatting.preset": "OTBS",
+  "powershell.codeFormatting.pipelineIndentationStyle": "IncreaseIndentationForFirstPipeline",
+  "powershell.codeFormatting.useCorrectCasing": true
 }
  

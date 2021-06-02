@@ -1,8 +1,12 @@
-# Lab: Golf
+# Lab: Terminal Golf
 
+## Summary
 
-
-### Reqirements
+These are a few exercises for getting familiar with the Powershell terminal if you've
+never used it-- or as a refresher if you have. Try to use the built-in help system, and
+rely on Google as a backup plan.
+    
+## Reqirements
 1. Use the help system to find examples of how to use this command: 
     `Invoke-RestMethod`
 
@@ -10,7 +14,7 @@
 
 3. Get a list of Markdown documents (extension: md) in this folder and all sub-folders
 
-4. Start an executable-- notepad\ for instance-- and stop it
+4. Start an executable-- notepad for instance-- and stop it
 
 5. Display the contents of this file: https://www.gutenberg.org/files/1322/1322-0.txt 
 

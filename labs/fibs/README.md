@@ -18,12 +18,21 @@ Here's [problem #2](https://projecteuler.net/problem=2):
 > _even-valued_ terms.
 
 
+## Requirements
+1. Get the right output. (I think it's 4613732.)
+2. Write tests as time allows.
+
+
+
+
+
+
+
+
 
 
 ## Hints
-* Read up here: https://www.phillipsj.net/posts/memoization-in-powershell/
 * Here's a naive solution that works well for small numbers:
-
 ```
 function Get-Term($position){
   if($position -eq 0){
@@ -35,4 +44,4 @@ function Get-Term($position){
   return (Get-Fibs ($position - 1)) + (Get-Fibs ($position - 2))
 }
 ```
-
+* Read up here: https://www.phillipsj.net/posts/memoization-in-powershell/

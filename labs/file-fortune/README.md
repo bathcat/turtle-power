@@ -7,20 +7,18 @@ The way it works is you type in `fortune` and it gives
 you your fortune. Woo!
 
 
-
 ## Requirements: 
 * Parse the data file 
-  - Located here: `file _data/fortunes.txt`
+  - Located here: `file _assets/fortunes.txt`
   - One fortune per line
-* Pick one at random
+* Pick a line at random
 * Display in on the terminal
-
 
 
 ## Stretch Goals
 * Make sure to clean up resources
 * Anticipate the possibility of failure
-* Parse the actual `fortune` data file 
-  - Located here: `file _data/fortunes`
+* Parse the actual `fortunes` data file used by the unix app
+  - Located here: `file _assets/fortunes`
   - Fortunes delimited by '%'
   - Trim any whitespace

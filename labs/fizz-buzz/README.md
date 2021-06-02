@@ -5,7 +5,7 @@
 Surprisingly, lots of professional programmers can't really 
 code[1]. FizzBuzz is a classic interview question for sussing-out 
 the non-skilled. 
-                  
+
 Here it is:
     Write a program that prints the numbers from 1 to 100. 
     But--
@@ -15,7 +15,7 @@ Here it is:
 
 
 ## Requirements
-1. Implement toText method
+1. Implement `Get-Message` function
 2. Write the correct output--described above-- to the console
 
 ## Stretch Goals
@@ -23,7 +23,5 @@ Here it is:
 
 Notes:
 1. https://blog.codinghorror.com/why-cant-programmers-program/
-
-
 
 

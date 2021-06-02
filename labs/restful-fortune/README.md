@@ -2,7 +2,7 @@
 
 ## Summary
 A major shortcoming of the standard [fortune](https://en.wikipedia.org/wiki/Fortune_(Unix))
-application is it's near total lack of either Kanye West 
+application is its near total lack of either Kanye West 
 quotes _or_ cat facts.
 
 For example, `fortune` will never tell you this--
@@ -20,8 +20,8 @@ Here are 2 examples of public API endpoints:
 * http://api.kanye.rest
 * https://cat-fact.herokuapp.com/facts/random
 
-(Be warned: Though Kanye is hilarious, he gets salty 
-sometimes, so pick the cat facts if your disposition
+(Be warned: Though Kanye is hilarious, he does get salty 
+at times, so pick the cat facts if your disposition
 is a sensitive one.)
 
 
@@ -34,10 +34,5 @@ is a sensitive one.)
 ## Stretch Goals
 * Clean up any resources
 * Anticipate failure
-
-
-
-
-
-
+* Write unit tests
 

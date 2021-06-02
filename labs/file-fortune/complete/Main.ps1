@@ -1,11 +1,3 @@
-function Get-Fortune{
-    [OutputType([string])]
-    Param()
-
-    Get-Item './labs/file-fortune/_assets/fortunes.txt' |
-    Get-Content |
-        Sort-Object -Property @{Expression = {Get-Random}} |
-        Select-Object -First 1
-}
+. $PSCommandPath.Replace('Main.ps1','Get-Fortune.ps1')
 
 Get-Fortune

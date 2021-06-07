@@ -64,8 +64,6 @@ However, the tools below are very nice to have:
 * Reading Registry Data
 * Working with WMI/CIM
 * Background and Scheduled Jobs
-* Administering Remote Computers
-* Automating Administration with scripts and schedulers
 
 ### Best Practices
 * Designing for reuse

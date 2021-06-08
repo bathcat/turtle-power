@@ -9,7 +9,7 @@
 
 ---
 
-## Lorem
+## Syntax
 
 ---
 

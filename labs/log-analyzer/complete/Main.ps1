@@ -1,4 +1,4 @@
-. $PSCommandPath.Replace('Main.ps1','Write-Report.ps1')
+Import-Module $PSCommandPath.Replace('Main.ps1','Write-Report.ps1')
 
 $path = $PSCommandPath |
   Split-Path |

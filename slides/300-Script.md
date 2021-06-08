@@ -20,14 +20,20 @@
 
 ---
 
-## Sic
-
+## Variables
 
 ---
 
-### Dolor
+### Overview
 * Lorem
 * Ipsum
 * Sic dolor
 
+---
+
+### [`New-Variable`](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-variable)
+```powershell
+New-Variable -Name PI -Value 3.14 -Option Constant
+Write-Host $PI
+```
 

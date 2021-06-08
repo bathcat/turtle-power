@@ -35,8 +35,13 @@
 ---
 
 ### Tab-Completion
-* Type `Get-`
+* Type `Get-` + tab
 * Works for parameters too
+
+---
+
+### History
+* Up arrow
 
 ---
 

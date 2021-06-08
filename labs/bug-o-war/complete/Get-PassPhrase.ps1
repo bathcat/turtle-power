@@ -1,4 +1,7 @@
-$words = 'chicken', 'galavant', 'desk', 'Timothy', 'seven'
+New-Variable `
+  -Name words `
+  -Value 'chicken', 'galavant', 'desk', 'Timothy', 'seven' `
+  -Option Private, Constant
 
 function Get-PassPhrase{
   [OutputType([string])]

@@ -1,4 +1,4 @@
-# Functions
+# Structure
 
 ---
 
@@ -9,25 +9,54 @@
 
 ---
 
-## Lorem
+## Collections
 
 ---
 
-### Ipsum
-* Lorem
+### Overview
+* Arrays are
+  - Built-in
+  - Immutable
+  - Heterogeneous
+* Alternatives:
+  - [ArrayList](https://docs.microsoft.com/en-us/dotnet/api/system.collections.arraylist)
+
+---
+
+### Syntax
+```powershell
+$xs = 1,2,3
+$ys = 'danish','strudle',3.14
+$zs = @(1)
+```
+
+---
+
+## Dictionaries
+
+---
+
+### Overview
+* Aka
+  - Map
+  - Associative array
 * Ipsum
 * Sic dolor
 
 ---
 
-## Sic
+### Syntax
+```powershell
+$employees = @{
+    11='park'
+    12='jones'
+    13='medina'
+}
+```
 
-
----
-
-### Dolor
-* Lorem
-* Ipsum
-* Sic dolor
+```powershell
+$info=@{name='bloggs';id=8281}
+$info.department = 'sales'
+```
 
 

@@ -1,4 +1,4 @@
-# High Level
+# High Level 🐢
 
 ---
 
@@ -9,24 +9,28 @@
 
 ---
 
-## Reasons I Like Pwsh
+## Things to Like
 
 ---
 
 ### Cross-Platform
-
+* Runs on
+  - Windows
+  - Linux
+  - OSX
+  - Docker
 
 ---
 
 ### .NET-Based
-
+* Open-source
+* Broad support
+* Does everything
 
 ---
 
 ### Powerful
-
-
-```pwsh
+```powershell
 
 function fix-slidebreaks($path){
   (Get-Content $path -Raw) -replace '(?ms)\s^(?=#{1,3}\s)', "---`n`n" | Out-File $path
@@ -40,16 +44,18 @@ Get-Item ./src/content/ | Get-ChildItem -Recurse -Filter content.mdx | %{fix-sli
 
 ### Ergonomic
 * Verb-noun makes it easy to read
-  + Unlike dir, cat, set, grep
+  + Unlike `dir`, `cat`, `set`, `grep`
 * Help system 
-* Tab-completion
-* Windows terminal / VSCode
+* Tab completion
+* Great tooling
+  - [Windows terminal](https://github.com/microsoft/terminal) 
+  - [VSCode](https://code.visualstudio.com/)
 
 --- 
 
 ### Useful
 
-```pwsh
+```powershell
 
 npm run ssr
 cd dist
@@ -86,5 +92,40 @@ Note:
 
 ---
 
-### Some things are kind of goofy
+### Goofy Syntax
+* Sigils
+* Array unrolling
+* Drive weirdness
+
+---
+
+### Small Community
+* Lower install base than bash
+* 
+
+---
+
+### Upper Limit
+* Lorem ipsum
+* < 1000 lines
+
+---
+
+## Philosophy
+
+---
+
+### Alternatives
+* [bash](https://lorem.ipsum)
+* [cmd.exe](https://en.wikipedia.org/wiki/Cmd.exe)
+* [Python](https://lorem.ipsum)
+
+---
+
+### Differences
+* Not really Unixy
+* Works with .NET objects (not text)
+* Inclusive runtime
+  - Doesn't just coordinate exes
+
 

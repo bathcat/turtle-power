@@ -1,4 +1,4 @@
-Import-Module $PSCommandPath.Replace('Main.ps1','Optimize-Tidiness.ps1')
+Import-Module -Force $PSCommandPath.Replace('Main.ps1','Optimize-Tidiness.ps1')
 
 $path = $PSCommandPath |
   Split-Path |

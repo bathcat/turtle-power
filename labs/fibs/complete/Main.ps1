@@ -1,4 +1,4 @@
-Import-Module $PSCommandPath.Replace('Main.ps1','Get-Fibs.ps1')
+Import-Module -Force $PSCommandPath.Replace('Main.ps1','Get-Fibs.ps1')
 
 "Here is your answer: "
 

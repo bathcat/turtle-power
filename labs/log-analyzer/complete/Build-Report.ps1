@@ -1,4 +1,4 @@
-Import-Module $PSCommandPath.Replace('Build-Report.ps1','Read-Entry.ps1')
+Import-Module -Force $PSCommandPath.Replace('Build-Report.ps1','Read-Entry.ps1')
 
 function Build-Report{
   Param(

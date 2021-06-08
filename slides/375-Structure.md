@@ -59,4 +59,48 @@ $info=@{name='bloggs';id=8281}
 $info.department = 'sales'
 ```
 
+---
+
+## Adding Class
+
+---
+
+### [Overview](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_classes)
+* Lorem
+* Ipsum
+
+---
+
+### Example
+```powershell
+class User{
+    [int]$id
+    [string]$name
+}
+$admin = [User]::new()
+$admin.id=0
+$admin.name='administrator'
+```
+
+---
+
+### Casting
+#### Works
+```powershell
+$admin = [User]@{
+  id=0
+  name='administrator'
+}
+```
+
+#### Fail
+```powershell
+$admin = [User]@{
+  id=0
+  name='administrator'
+  handle='jerry'
+}
+```
+
+
 

@@ -1,4 +1,4 @@
-# Functions
+# Scripts
 
 ---
 
@@ -26,15 +26,46 @@
 
 ### Overview
 * Prefixed with `$`
-* Ipsum
-* Sic dolor
-
----
-
-### [`New-Variable`](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-variable)
 ```powershell
 New-Variable -Name PI -Value 3.14 -Option Constant
 Write-Host $PI
+```
+---
+
+### Typing
+* Delimit with brackets
+* Use with
+  - .NET Type
+  - [Accelerators](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_type_accelerators?view=powershell-7.1)
+
+```powershell
+[int]$slotsAvailable = 12
+$slotsAvailable = 'none'
+```
+
+---
+
+
+### Variable Cmdlets
+* [Get-Variable](https://lorem.ipsum)
+* [Set-Variable](https://lorem.ipsum)
+* [New-Variable](https://lorem.ipsum)
+* [Remove-Variable](https://lorem.ipsum)
+* [Clear-Variable](https://lorem.ipsum)
+
+---
+
+### Modifier: Constant
+```powershell
+New-Variable -Name PI -Value 3.14 -Option Constant
+Write-Host $PI
+```
+
+---
+
+### Modifier: Private
+```powershell
+New-Variable maxLineLength -Value 80 -Option Private, Constant
 ```
 
 ---

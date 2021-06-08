@@ -46,8 +46,7 @@ function Get-Forecast{
   )
   process{
     $uri = "https://api.weather.gov/gridpoints/$($location.office)/$($location.x),$($location.y)/forecast"
-    
-    write-host "`n`n$uri`n`n"
+
     $json =  Invoke-RestMethod $uri
     return $json.properties.periods[0].shortForecast
   }

@@ -1,3 +1,3 @@
-Import-Module -Force $PSCommandPath.Replace('Main.ps1','Get-Fortune.ps1')
+Import-Module $PSScriptRoot/Get-Fortune.ps1 -Force
 
 Get-Fortune

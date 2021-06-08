@@ -1,4 +1,4 @@
-Import-Module -Force $PSCommandPath.Replace('Main.ps1','Write-Report.ps1')
+Import-Module $PSScriptRoot/Write-Report -Force
 
 $path = $PSCommandPath |
   Split-Path |

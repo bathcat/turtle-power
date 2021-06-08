@@ -1,3 +1,3 @@
-Import-Module -Force $PSCommandPath.Replace('Main.ps1','Get-Weather.ps1')
+Import-Module $PSScriptRoot/Get-Weather.ps1 -Force
 
 Get-Weather

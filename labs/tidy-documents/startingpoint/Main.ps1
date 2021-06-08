@@ -1,8 +1,8 @@
-$path = './labs/file-fortune/_assets/fortunes.txt'
+. $PSCommandPath.Replace('Main.ps1','Optimize-Tidiness.ps1')
 
-function Get-Fortune(){
-  return 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a placerat sapien.'
-}
+$path = $PSCommandPath |
+  Split-Path |
+  Split-Path |
+  Join-Path -ChildPath '_assets'
 
-Get-Fortune
-
+Optimize-Tidiness $path

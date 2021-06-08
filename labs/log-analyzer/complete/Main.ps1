@@ -1,4 +1,8 @@
 . $PSCommandPath.Replace('Main.ps1','Write-Report.ps1')
 
-$VerbosePreference = "Continue"
-Write-Report './labs/log-analyzer/_assets/prod221.log'
+$path = $PSCommandPath |
+  Split-Path |
+  Split-Path |
+  Join-Path -ChildPath '_assets/prod221.log'
+
+Write-Report $path

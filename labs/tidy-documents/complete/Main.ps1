@@ -1,8 +1,8 @@
-function Get-Fortune(){
-    Get-Item './labs/file-fortune/_assets/fortunes.txt' |
-    Get-Content |
-        Sort-Object -Property @{Expression = {Get-Random}} |
-        Select-Object -First 1
-}
+. $PSCommandPath.Replace('Main.ps1','Optimize-Tidiness.ps1')
 
-Get-Fortune
+$path = $PSCommandPath |
+  Split-Path |
+  Split-Path |
+  Join-Path -ChildPath '_assets'
+
+Optimize-Tidiness $path

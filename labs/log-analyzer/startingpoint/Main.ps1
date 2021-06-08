@@ -1,8 +1,8 @@
-$path = './labs/log-analyzer/_assets/prod221.log'
+. $PSCommandPath.Replace('Main.ps1','Build-Report.ps1')
 
-function Get-Report(){
-  return 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a placerat sapien.'
-}
+$path = $PSCommandPath |
+  Split-Path |
+  Split-Path |
+  Join-Path -ChildPath '_assets/prod221.log'
 
-Get-Report
-
+Build-Report $path

@@ -4,7 +4,7 @@ $words = 'chicken', 'galavant', 'desk', 'Timothy', 'seven'
 function Get-PassPhrase{
   param(
     [int]$minWords,
-    [int]$maxWords,    
+    [int]$maxWords,
     [int]$seed = 1
   )
 

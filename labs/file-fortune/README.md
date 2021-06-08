@@ -9,7 +9,7 @@ you your fortune. Woo!
 
 ## Requirements: 
 * Parse the data file 
-  - Located here: `file _assets/fortunes.txt`
+  - Located here: `_assets/fortunes.txt`
   - One fortune per line
 * Pick a line at random
 * Display in on the terminal
@@ -19,6 +19,6 @@ you your fortune. Woo!
 * Make sure to clean up resources
 * Anticipate the possibility of failure
 * Parse the actual `fortunes` data file used by the unix app
-  - Located here: `file _assets/fortunes`
+  - Located here: `_assets/fortunes`
   - Fortunes delimited by '%'
   - Trim any whitespace

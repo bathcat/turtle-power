@@ -1,8 +1,12 @@
+$path = Split-Path $PSCommandPath |
+    Split-Path |
+    Join-Path -ChildPath '_assets/fortunes.txt'
+
 function Get-Fortune{
     [OutputType([string])]
     Param()
 
-    Get-Item './labs/file-fortune/_assets/fortunes.txt' |
+    Get-Item $path |
         Get-Content |
         Sort-Object -Property @{Expression = {Get-Random}} |
         Select-Object -First 1

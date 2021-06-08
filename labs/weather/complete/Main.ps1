@@ -1,5 +1,3 @@
-. $PSCommandPath.Replace('Main.ps1','Get-Forecast.ps1')
+. $PSCommandPath.Replace('Main.ps1','Get-Weather.ps1')
 
-Get-CurrentLocation |
-Get-GridLocation |
-Get-Forecast
+Get-Weather

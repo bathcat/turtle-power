@@ -17,5 +17,13 @@ function Get-GridLocation($latitude,$longitude){
 
 function Get-Forecast($office,$x,$y){
   $uri = "https://api.weather.gov/gridpoints/$office/$x,$y/forecast"
-  return '$response.properties.periods[0].shortForecast'
+  return "`nLorem ipsum sic dolor.`n"
 }
+
+function Get-Weather{
+  $here = Get-CurrentLocation
+  $hereOnGrid = Get-GridLocation $here.latitude $here.longitude
+  return Get-Forecast $hereOnGrid.office $hereOnGrid.x $hereOnGrid.y
+}
+
+

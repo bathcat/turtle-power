@@ -14,34 +14,34 @@ function Get-Fibs($count) {
   }
 }
 
-function Get-Sum{
+function Get-Sum {
   [OutputType([string])]
   Param(
-      [Parameter(ValueFromPipeline=$true)]
-      [int]$n
+    [Parameter(ValueFromPipeline = $true)]
+    [int]$n
   )
-  begin{
-    $sum=0
+  begin {
+    $sum = 0
   }
 
-  process{
-    $sum+=$n
+  process {
+    $sum += $n
   }
 
-  end{
+  end {
     return $sum
   }
 }
 
-filter Select-Evens{
-  if($_%2 -eq 0){
+filter Select-Evens {
+  if ($_ % 2 -eq 0) {
     return $_
   }
 }
 
 
-filter Select-InRange{
-  if($_ -le $limit){
+filter Select-InRange {
+  if ($_ -le $limit) {
     return $_
   }
 }

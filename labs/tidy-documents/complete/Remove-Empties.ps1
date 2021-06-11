@@ -1,5 +1,8 @@
 function Remove-Empties {
-  [cmdletbinding(SupportsShouldProcess)]
+  [CmdletBinding(
+    SupportsShouldProcess,
+    ConfirmImpact = 'High'
+  )]
   param (
       [Parameter(Mandatory)]
       [string]$path
@@ -18,4 +21,3 @@ function Remove-Empties {
 
   Remove-Item $empties
 }
-

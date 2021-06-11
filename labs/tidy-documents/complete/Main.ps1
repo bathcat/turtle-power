@@ -8,6 +8,12 @@ Import-Module -Force $AssetsRoot/Reset-Demo.ps1
 Reset-Demo $assetsRoot | Out-Null
 #endregion demo-setup
 
-Import-Module $PSScriptRoot/Optimize-Tidiness.ps1 -Force
-Optimize-Tidiness $assetsPath
+Import-Module $PSScriptRoot/Remove-Empties.ps1 -Force
+Import-Module $PSScriptRoot/Remove-Duplicates.ps1 -Force
 
+#Optimize-Tidiness $AssetsRoot
+
+#Remove-Empties $AssetsRoot 
+
+
+Find-DuplicateFiles $AssetsRoot

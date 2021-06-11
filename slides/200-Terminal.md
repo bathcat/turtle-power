@@ -28,7 +28,7 @@
 
 ### Verb-Noun
 * Verbs are on the approved list
-  - It's customizable
+  - Though it's customizable
 * Nouns are whatever
   - But consistent across related operations
 
@@ -95,6 +95,8 @@ Get-Help Get-ChildItem -Examples
 * Problems
   - Consistency
   - Readability
+  - Semantic differences
+    * e.g. *Nix `rm` and Pwsh `rm -> Remove-Item`
   - Syntax-completion minimizes typing anyway
 * Consider
   - Removing them altogether

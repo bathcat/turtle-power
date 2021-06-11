@@ -1,8 +1,10 @@
 Import-Module $PSScriptRoot/Optimize-Tidiness.ps1 -Force
+Import-Module $PSScriptRoot/Reset-Demo.ps1 -Force
 
-$path = $PSCommandPath |
+$target = $PSCommandPath |
   Split-Path |
   Split-Path |
   Join-Path -ChildPath '_assets'
 
-Optimize-Tidiness $path
+Reset-Demo $target | Out-Null
+Optimize-Tidiness $path -WhatIf

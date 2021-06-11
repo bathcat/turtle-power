@@ -1,3 +1,6 @@
+Set-StrictMode -Version Latest
+
+
 $path = Split-Path $PSCommandPath |
     Split-Path |
     Join-Path -ChildPath '_assets/fortunes.txt'

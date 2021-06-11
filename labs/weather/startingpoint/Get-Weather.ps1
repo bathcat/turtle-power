@@ -1,5 +1,4 @@
 function Get-CurrentLocation(){
-  $uri = 'http://www.geoplugin.net/json.gp'
   return @{
       latitude=0
       longitude=0
@@ -7,7 +6,6 @@ function Get-CurrentLocation(){
 }
 
 function Get-GridLocation($latitude,$longitude){
-  $uri = "https://api.weather.gov/points/$latitude,$longitude"
   return @{
       office= 'XYZ'
       x=0
@@ -16,6 +14,12 @@ function Get-GridLocation($latitude,$longitude){
 }
 
 function Get-Forecast($office,$x,$y){
-  $uri = "https://api.weather.gov/gridpoints/$office/$x,$y/forecast"
-  return '$response.properties.periods[0].shortForecast'
+  return "`nLorem ipsum sic dolor.`n"
 }
+
+function Get-Weather{
+  $here = Get-CurrentLocation
+  $hereOnGrid = Get-GridLocation $here.latitude $here.longitude
+  return Get-Forecast $hereOnGrid.office $hereOnGrid.x $hereOnGrid.y
+}
+

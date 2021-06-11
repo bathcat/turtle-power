@@ -1,5 +1,5 @@
 BeforeAll {
-    . $PSCommandPath.Replace('.Tests.ps1', '.ps1')
+    Import-Module -Force $PSCommandPath.Replace('.Tests.ps1','.ps1')
 }
 
 Describe 'Get-Fibs' {

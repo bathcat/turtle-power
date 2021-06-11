@@ -13,7 +13,7 @@ Lorem ipsum sic dolor
 
 
 
-
+```
 Filesystem     1K-blocks      Used Available Use% Mounted on
 udev            32877300         0  32877300   0% /dev
 tmpfs            6588376      2324   6586052   1% /run
@@ -25,7 +25,7 @@ tmpfs           32941872         0  32941872   0% /sys/fs/cgroup
 /dev/loop2         66944     66944         0 100% /snap/powershell/158
 /dev/loop1         56832     56832         0 100% /snap/core18/2066
 /dev/loop4         32896     32896         0 100% /snap/snapd/11841
-
+```
 
 
 

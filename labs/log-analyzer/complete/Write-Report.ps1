@@ -1,4 +1,4 @@
-. $PSCommandPath.Replace('Write-Report.ps1','Build-Report.ps1')
+Import-Module $PSScriptRoot/Build-Report.ps1 -Force
 
 function Write-Report{
   Param(

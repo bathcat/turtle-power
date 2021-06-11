@@ -1,4 +1,4 @@
-. $PSCommandPath.Replace('Main.ps1','Get-Fibs.ps1')
+Import-Module $PSScriptRoot/Get-Fibs.ps1 -Force
 
 "Here is your answer: "
 

@@ -1,4 +1,4 @@
-. $PSCommandPath.Replace('Main.ps1','Optimize-Tidiness.ps1')
+Import-Module $PSScriptRoot/Optimize-Tidiness.ps1 -Force
 
 $path = $PSCommandPath |
   Split-Path |

@@ -1,7 +1,3 @@
-. $PSCommandPath.Replace('Main.ps1','Get-Forecast.ps1')
+Import-Module $PSScriptRoot/Get-Weather.ps1 -Force
 
-$here = Get-CurrentLocation
-$hereOnGrid = Get-GridLocation $here.latitude $here.longitude
-
-Get-Forecast $hereOnGrid.office $hereOnGrid.x $hereOnGrid.y
-
+Get-Weather

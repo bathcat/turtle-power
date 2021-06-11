@@ -46,16 +46,16 @@
 ---
 
 ### Parameters
-* Passed by name
-```
+* Passed by position
+```powershell
 Get-Command 'Get-Help'
 ```
-* Name
-```
+* Passed by name
+```powershell
 Get-Command -Name 'Get-Help' 
 ```
 * Mix
-```
+```powershell
 Get-Command 'Get-Help' -OnLine
 ```
 ---
@@ -80,11 +80,14 @@ Get-Help Get-ChildItem -Examples
   - Save keystrokes (alegedly)
   - Be familiar
 * Examples
-Get-ChildItem gci dir ls
-Set-Location cd chdir
-Write-Output echo
-mkdir
- rmdir
+
+| Pwsh            | Shorthand | Cmd.exe | Bash         |
+|-----------------|-----------|---------|--------------|
+| `Get-ChildItem` | `gci`     | `dir`   | `ls`         |
+| `Set-Location`  | `sl`      | `chdir` | `cd`         |
+| `Write-Output`  | `write`   | `echo`  | `echo`       |
+| `New-Item`      | `ni`      | `md`    | `mkdir`      |        
+| `Remove-Item`   | `ri`      | `del`   | `rm`,`rmdir` |
 
 ---
 
@@ -97,6 +100,31 @@ mkdir
   - Removing them altogether
   - Picking a consistent set
 
+---
+
 ### Script: Unalias
+```powershell
+Get-Alias | 
+  ?{$_.Name -notin '%','?'} | 
+  Remove-Alias -Force
+```
 
+---
 
+### Combining
+* Statements run sequentially
+```powershell
+Write-Output "Hello"; Write-Output "World"
+```
+
+* Conditional on **success**
+```powershell
+Set-ExecutionPolicy RemoteSigned && Write-Output "Success!"
+```
+
+* Conditional on **failure**
+```powershell
+Write-Output $xyz || Write-Output 'Variable "$xyz" not found'
+```
+
+---

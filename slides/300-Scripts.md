@@ -20,6 +20,22 @@
 
 ---
 
+### Multiline
+* Use the [*grave accent* `](https://en.wikipedia.org/wiki/Grave_accent)
+* Example:
+```powershell
+Get-ChildItem -Recurse -Hidde -Filter *.md
+
+# More readable equivalent
+Get-ChildItem `
+  -Recurse `
+  -Hidden `
+  -Filter *.md
+```
+
+
+---
+
 ## Variables
 
 ---

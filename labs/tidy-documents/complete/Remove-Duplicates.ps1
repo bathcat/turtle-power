@@ -36,12 +36,14 @@ function Compress-DuplicateFiles{
   )
 
   process {
+    $reason = [System.Management.Automation.ShouldProcessReason]::None
+    $shouldProcess = $PSCmdlet.ShouldProcess('MESSAGE','TARGET','OPERATION',[ref]$reason)
+
+    if((-not $shouldProcess) -and ($reason -eq 'None' )){
+      return;
+    }
+    
     $paths = $set.files | % FullName
-
-    $PSCmdlet.ShouldProcess($paths)
-    $PSCmdlet.
-
-
     $goldCopy = $paths | Select-Object -First 1
     $redundancies = $paths | Select-Object -Skip 1
 

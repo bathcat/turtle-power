@@ -19,10 +19,12 @@ that gets its fortune data from a public web API.
 Here are 2 examples of public API endpoints:
 * http://api.kanye.rest
 * https://cat-fact.herokuapp.com/facts/random
+* https://official-joke-api.appspot.com/random_joke
 
-(Be warned: Though Kanye is hilarious, he does get salty 
-at times, so pick the cat facts if your disposition
-is a sensitive one.)
+There's a good list of public APIs [here](https://github.com/public-apis/public-apis).
+
+(**Be warned:** Though Kanye is hilarious, he does get salty 
+at times, so avoid him if your disposition is a sensitive one.)
 
 
 ## Requirements

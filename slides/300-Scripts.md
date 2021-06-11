@@ -132,3 +132,13 @@ Write-Host "`tNinja"
 Write-Host "`tGoat"
 Write-Host "`tNeedle"
 ```
+
+---
+
+### [Set-StrictMode](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/set-strictmode)
+* Lorem
+* Ipsum
+* Sic dolor
+
+---
+

@@ -13,7 +13,8 @@ Import-Module $PSScriptRoot/Remove-Duplicates.ps1 -Force
 
 #Optimize-Tidiness $AssetsRoot
 
-#Remove-Empties $AssetsRoot 
+Remove-Empties $AssetsRoot -WhatIf
 
 
-Find-DuplicateFiles $AssetsRoot
+
+# Find-DuplicateFiles $AssetsRoot

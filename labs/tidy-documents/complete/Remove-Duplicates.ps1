@@ -10,6 +10,7 @@ function Find-DuplicateFiles {
   [OutputType([FileSet[]])]
   param (
       [Parameter(Mandatory)]
+      [ValidateScript({Test-Path $_})]
       [string]$path
   )
 

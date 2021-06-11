@@ -7,17 +7,17 @@ function Remove-Empties {
       [Parameter(Mandatory)]
       [string]$path
   )
+
+  $reason = [System.Management.Automation.ShouldProcessReason]::None
+  $shouldProcess = $PSCmdlet.ShouldProcess('MESSAGE','TARGET','OPERATION',[ref]$reason)
+
+  if((-not $shouldProcess) -and ($reason -eq 'None' )){
+    return;
+  }
+
   $empties = Get-ChildItem -Path $path -Recurse |
                 ?{$_ -is [System.IO.DirectoryInfo]} |
                 ?{$_.GetFileSystemInfos().Count -eq 0}
 
-  if (-not $PSCmdlet.ShouldProcess($path)) {
-    foreach($empty in $empties){
-      Write-Host "`t" -NoNewline
-      Remove-Item $empty -WhatIf
-    }
-    return
-  }
-
-  Remove-Item $empties
+  Remove-Item $empties -WhatIf:$WhatIfPreference
 }

@@ -7,7 +7,9 @@ function Reset-Demo{
     [Parameter(Mandatory)]
     [string]$root
   )
-  $folders = "$root/Documents/Videos", "$root/Downloads/Pensky"
+  $folders = "$root/Documents/Videos",
+             "$root/Downloads/Pensky",
+             "$root/Templates"
 
   $files = (
     @{

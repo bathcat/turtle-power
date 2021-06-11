@@ -36,20 +36,21 @@ function Compress-DuplicateFiles{
   )
 
   process {
-    $reason = [System.Management.Automation.ShouldProcessReason]::None
-    $shouldProcess = $PSCmdlet.ShouldProcess('MESSAGE','TARGET','OPERATION',[ref]$reason)
-
-    if((-not $shouldProcess) -and ($reason -eq 'None' )){
-      return;
-    }
-    
-    $paths = $set.files | % FullName
+    $paths = $set.files | % FullName -WhatIf:$false
     $goldCopy = $paths | Select-Object -First 1
     $redundancies = $paths | Select-Object -Skip 1
 
+    $reason = [System.Management.Automation.ShouldProcessReason]::None
+    $shouldProcess = $PSCmdlet.ShouldProcess('MESSAGE','TARGET','OPERATION',[ref]$reason)
+
+    [bool]$isWhatif = $reason -eq 'WhatIf'
+
+    if((-not $shouldProcess) -and (-not $isWhatif )){
+      return;
+    }
     foreach ($path in $redundancies) {
-        Remove-Item $path -WhatIf:$WhatIfPreference
-        New-Item -Path $path -ItemType SymbolicLink -Target $goldCopy -WhatIf:$WhatIfPreference
+      Remove-Item $path -WhatIf:$isWhatif
+      New-Item -Path $path -ItemType SymbolicLink -Target $goldCopy -WhatIf:$isWhatif
     }
   }
 }

@@ -32,10 +32,15 @@ function Compress-DuplicateFiles{
   )]
   param (
       [Parameter(Mandatory,ValueFromPipeline)]
-      [FileSet]$set
+      [FileSet]$set,
+      [Switch]$Force
   )
 
   process {
+    if ($Force){
+      $ConfirmPreference = 'None'
+    }
+
     $paths = $set.files | % FullName -WhatIf:$false
     $goldCopy = $paths | Select-Object -First 1
     $redundancies = $paths | Select-Object -Skip 1

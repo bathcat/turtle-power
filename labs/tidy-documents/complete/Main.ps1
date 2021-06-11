@@ -18,4 +18,4 @@ Import-Module $PSScriptRoot/Remove-Duplicates.ps1 -Force
 
 
 Find-DuplicateFiles $AssetsRoot |
-    Compress-DuplicateFiles
+    Compress-DuplicateFiles -Force

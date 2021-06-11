@@ -3,8 +3,8 @@ BeforeAll {
 }
 
 Describe 'Get-GridLocationUri' {
-    
-    It 'Should format properly' {    
+
+    It 'Should format properly' {
         $location = @{
             latitude=25;
             longitude=33;

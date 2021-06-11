@@ -4,6 +4,6 @@ function Get-Fortune{
     Param()
 
     $json = Invoke-RestMethod $endpoint
-    $json.quote
+    return $json.quote
 }
 

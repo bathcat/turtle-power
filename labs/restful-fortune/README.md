@@ -35,4 +35,5 @@ is a sensitive one.)
 * Clean up any resources
 * Anticipate failure
 * Write unit tests
+* Censor Kanye's salty language
 

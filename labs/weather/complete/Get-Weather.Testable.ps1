@@ -1,3 +1,5 @@
+Set-StrictMode -Version Latest
+
 class Point {
     [int]$latitude
     [int]$longitude

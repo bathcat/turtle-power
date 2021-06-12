@@ -1,4 +1,4 @@
-Import-Module $PSScriptRoot/Get-Fibs.ps1 -Force
+using module './Get-Fibs.ps1'
 
 "Here is your answer: "
 

@@ -1,6 +1,4 @@
-BeforeAll {
-    Import-Module -Force $PSCommandPath.Replace('.Tests.ps1','.ps1')
-}
+using module './Get-Fibs.ps1'
 
 Describe 'Get-Fibs' {
 
@@ -31,6 +29,5 @@ Describe 'Get-Sum' {
     It 'Should be 55 for 1..10' {
         1..10 | Get-Sum | Should -Be 55
     }
- 
 
 }

@@ -130,3 +130,13 @@ Write-Output $xyz || Write-Output 'Variable "$xyz" not found'
 ```
 
 ---
+
+### More
+* Gets stuff one page at a time
+* Mostly the same on:
+  - Windows: [`more.com`](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/more)
+  - *Nix: [`/usr/bin/more`](https://en.wikipedia.org/wiki/More_(command))
+* Example:
+```powershell
+Get-Command | more
+```

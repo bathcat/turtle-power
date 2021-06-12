@@ -15,6 +15,7 @@ rely on Google as a backup plan.
 3. Get a list of Markdown documents (extension: `md`) in this folder and all sub-folders
 
 4. Start an executable-- notepad for instance-- and stop it
+  - Stretch goal: Leave the executable up for 10 seconds before stopping it
 
 5. Display the contents of this file: https://www.gutenberg.org/files/1322/1322-0.txt 
 

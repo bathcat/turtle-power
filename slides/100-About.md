@@ -37,6 +37,10 @@ public static class Mathy{
 "@
 [Mathy]::Add(5,19)
 ```
+
+Note:
+* [Add-Type](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/add-type)
+
 ---
 
 ### Powerful
@@ -140,10 +144,17 @@ Note:
 
 ---
 
+### Comparisons
+
+
+---
+
+
 ### Resources: Reading
 
 * [AdamTheAutomator.cem](https://adamtheautomator.com/tag/powershell/)
 * [Reddit](https://www.reddit.com/r/PowerShell/)
+* [Lorem ipsum](https://poshcode.gitbook.io/powershell-practice-and-style/)
 
 ---
 

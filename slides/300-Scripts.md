@@ -130,7 +130,7 @@ Write-Host "Processing...`n`nDone!"
 Write-Host "Here are things:"
 Write-Host "`tNinja"
 Write-Host "`tGoat"
-Write-Host "`tNeedle"
+Write-Host "`tTree"
 ```
 
 ---
@@ -142,3 +142,6 @@ Write-Host "`tNeedle"
 
 ---
 
+### [about_Preference_Variables](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_preference_variables)
+* Lorem
+* Ipsum

@@ -34,8 +34,20 @@
 
 ---
 
+### The Magic of [`Get-Command`](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/get-command)
+* Lorem 
+* Ipsum
+```powershell
+Get-Command
+Get-Command -Noun 'Process'
+Get-Command -Verb 'Start'
+```
+
+---
+
 ### Tab-Completion
-* Type `Get-` + tab
+* Type `Get-Com` + tab 
+* Double-tab to see options
 * Works for parameters too
 
 ---
@@ -45,19 +57,22 @@
 
 ---
 
-### Parameters
+### [about_Parameters](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_parameters)
 * Passed by position
 ```powershell
 Get-Command 'Get-Help'
 ```
+
 * Passed by name
 ```powershell
 Get-Command -Name 'Get-Help' 
 ```
+
 * Mix
 ```powershell
 Get-Command 'Get-Help' -OnLine
 ```
+
 ---
 
 ### Flags
@@ -65,6 +80,28 @@ Get-Command 'Get-Help' -OnLine
 ```
 Get-Help Get-ChildItem -Examples
 ```
+
+---
+
+### The Magic of [`Get-Help'](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/get-help)
+#### Commands
+```powershell
+Get-Help Get-ChildItem
+```
+
+#### Wildcards
+```powershell
+Get-Help Remove-*
+Get-Help about*
+```
+
+#### Useful parameters
+```powershell
+Get-Help Get-Random -Detailed 
+Get-Help Get-Date -Full
+Get-Help Invoke-RestMethod -Online
+```
+
 
 ---
 
@@ -144,3 +181,6 @@ Get-Command | more
 # Alternative
 Get-Command | Out-Host -Paging
 ```
+
+Notes:
+* https://4sysops.com/archives/displaying-text-one-page-at-a-time-in-powershell-more-less-head-tail/

@@ -15,7 +15,7 @@ function Get-Fibs($count) {
 }
 
 function Get-Sum {
-  [OutputType([string])]
+  [OutputType([int])]
   Param(
     [Parameter(ValueFromPipeline = $true)]
     [int]$n

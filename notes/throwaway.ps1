@@ -1,9 +1,15 @@
 
-Get-ChildItem @@{
-  Recursive=$true
-}
+$td = "public class User{
+  public readonly string name;
+  public readonly int id;
 
-return
+  public User(string name, int id){
+    this.name = name;
+    this.id=id;
+  }
+}"
+
+
 $args = @{
   TypeDefinition = @"
 public static class Mathy{

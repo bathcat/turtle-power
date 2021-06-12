@@ -3,8 +3,8 @@ BeforeAll {
 }
 
 Describe 'Get-PassPhrase' {
-    
-    It 'Should get a max of 3 words' {        
+
+    It 'Should get a max of 3 words' {
         $passphrase = Get-PassPhrase -minWords 1 -maxWords 3
         $passphrase.Length | Should -BeLessOrEqual 3
     }

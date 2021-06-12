@@ -5,7 +5,6 @@ BeforeAll {
 
 Describe 'Read-Entry' {
 
-    
     It 'Should get everything' {
         $entry = Read-Entry "02/12 11:01:06 INFO   :.....mailslot_create: creating mailslot for RSVP"
 

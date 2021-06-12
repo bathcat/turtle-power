@@ -3,14 +3,13 @@ BeforeAll {
 }
 
 Describe 'Get-Square' {
-    
-    It 'Should work as a function' {        
+
+    It 'Should work as a function' {
         Get-Square 2 | Should -Be 4
     }
 
-    It 'Should work piped' {        
+    It 'Should work piped' {
         2 | Get-Square | Should -Be 4
     }
 
 }
-

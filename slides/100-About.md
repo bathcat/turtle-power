@@ -138,4 +138,20 @@ Note:
 * Inclusive runtime
   - Doesn't just coordinate exes
 
+---
 
+### Resources: Reading
+
+* [AdamTheAutomator.cem](https://adamtheautomator.com/tag/powershell/)
+* [Reddit](https://www.reddit.com/r/PowerShell/)
+
+---
+
+### Tools
+* [PowerShell](https://github.com/PowerShell/PowerShell)
+* [Pester](https://pester.dev/)
+* [Psake](https://github.com/psake/psake)
+* [Windows Terminal](https://github.com/Microsoft/Terminal)
+* [VS Code](https://code.visualstudio.com/)
+  - [PowerShell Language Support](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)
+* [Git](https://git-scm.com/)

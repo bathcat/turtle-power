@@ -18,6 +18,9 @@
 * Ipsum
 * Sic dolor
 
+Notes:
+* [How to Survive Refactoring a PowerShell Script from Hell](https://adamtheautomator.com/powershell-script/)
+
 ---
 
 ## Sic

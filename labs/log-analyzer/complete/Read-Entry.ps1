@@ -1,11 +1,11 @@
+Set-StrictMode -Version Latest
 
 class Entry{
-  [string]$timestamp
+  [datetime]$timestamp
   [string]$severity
   [string]$operation
   [string]$message
 }
-
 
 function Read-Timestamp{
   [OutputType([datetime])]
@@ -47,7 +47,7 @@ function Read-Operation{
   )
   process{
     return $logEntry.Substring(23).Replace(".","").Split(":")[0];
-  }        
+  }
 }
 
 function Read-Message{
@@ -58,7 +58,7 @@ function Read-Message{
   )
   process{
     return $logEntry.Substring(23).Replace(".","").Split(":")[1].Trim();
-  }              
+  }
 }
 
 function Read-Entry{
@@ -67,8 +67,8 @@ function Read-Entry{
     [Parameter(ValueFromPipeline=$true)]
     [string]$logEntry
   )
-  # TODO: Shouldn't I cast this to the class explicitly? I want to, but it borks up the tests...
-  process {return @{
+
+  process {return [Entry]@{
     timestamp = Read-Timestamp $logEntry;
     severity = Read-Severity $logEntry;
     operation = Read-Operation $logEntry;

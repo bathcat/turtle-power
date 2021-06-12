@@ -158,6 +158,11 @@ Note:
 
 ---
 
+### Resources: Misc
+* [Koans](https://github.com/vexx32/PSKoans)
+
+---
+
 ### Tools
 * [PowerShell](https://github.com/PowerShell/PowerShell)
 * [Pester](https://pester.dev/)

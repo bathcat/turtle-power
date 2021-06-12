@@ -3,6 +3,7 @@ Import-Module $PSScriptRoot/Read-Entry.ps1 -Force
 function Build-Report{
   Param(
       [Parameter(Mandatory=$true)]
+      [ValidateNotNullOrEmpty()]
       $logFile
   )
 

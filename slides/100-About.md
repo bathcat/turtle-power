@@ -27,6 +27,16 @@
 * Broad support
 * Does everything
 
+```powershell
+Add-Type -TypeDefinition @"
+public static class Mathy{
+  public static int Add(int a, int b){
+    return (a + b);
+  }
+}
+"@
+[Mathy]::Add(5,19)
+```
 ---
 
 ### Powerful

@@ -17,7 +17,7 @@ function Find-DuplicateFiles {
   )
 
   return Get-ChildItem $path -Recurse -File |
-      # TODO: It's more effecient to get duplicated lengths first
+      # TODO: It's more efficient to get duplicated lengths first
       #       But it's not working somehow
       # Group-Object -Property Length |
       # ? Count -gt 1 |

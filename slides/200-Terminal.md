@@ -138,5 +138,9 @@ Write-Output $xyz || Write-Output 'Variable "$xyz" not found'
   - *Nix: [`/usr/bin/more`](https://en.wikipedia.org/wiki/More_(command))
 * Example:
 ```powershell
+# Classic
 Get-Command | more
+
+# Alternative
+Get-Command | Out-Host -Paging
 ```

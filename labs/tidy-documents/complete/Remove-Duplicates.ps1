@@ -1,3 +1,5 @@
+using namespace System.Management.Automation
+ 
 # Good writeup here:
 #  https://powershell.one/tricks/filesystem/finding-duplicate-files
 
@@ -45,10 +47,10 @@ function Compress-DuplicateFiles{
     $goldCopy = $paths | Select-Object -First 1
     $redundancies = $paths | Select-Object -Skip 1
 
-    $reason = [System.Management.Automation.ShouldProcessReason]::None
+    $reason = [ShouldProcessReason]::None
     $shouldProcess = $PSCmdlet.ShouldProcess('MESSAGE','TARGET','OPERATION',[ref]$reason)
 
-    [bool]$isWhatif = $reason -eq 'WhatIf'
+    [bool]$isWhatif = $reason -eq [ShouldProcessReason]::WhatIf
 
     if((-not $shouldProcess) -and (-not $isWhatif )){
       return;

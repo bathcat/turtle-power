@@ -39,7 +39,7 @@
         {
             "label": "Test",
             "type": "shell",
-            "command": "Invoke-Pester -Path './labs/**/complete/' -PesterOption @{IncludeVSCodeMarker=$true}",
+            "command": "Invoke-Pester -Path './labs/**/complete/' ",
             "group": {
                 "kind": "test",
                 "isDefault": true

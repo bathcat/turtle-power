@@ -50,6 +50,12 @@ Get-Command -Verb 'Start'
 * Double-tab to see options
 * Works for parameters too
 
+Note:
+* Get all shortcuts with this:
+```powershell
+Get-PSReadLineKeyHandler | more
+```
+
 ---
 
 ### History
@@ -102,6 +108,8 @@ Get-Help Get-Date -Full
 Get-Help Invoke-RestMethod -Online
 ```
 
+Note:
+* https://adamtheautomator.com/powershell-get-help/
 
 ---
 

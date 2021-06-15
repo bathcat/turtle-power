@@ -13,10 +13,33 @@
 
 ---
 
-### Ipsum
+### Overview
+* Lorem
+* Ipsum
+
+Note:
+* https://adamtheautomator.com/powershell-functions/
+
+---
+
+### Parameters
 * Lorem
 * Ipsum
 * Sic dolor
+
+Note:
+* https://adamtheautomator.com/powershell-parameter/
+
+---
+
+### Validation
+* Lorem
+* Ipsum
+
+Note:
+* https://adamtheautomator.com/powershell-validateset/
+* https://adamtheautomator.com/powershell-validatescript/
+* 
 
 ---
 

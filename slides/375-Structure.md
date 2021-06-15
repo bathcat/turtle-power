@@ -69,6 +69,9 @@ $info.department = 'sales'
 * Lorem
 * Ipsum
 
+Note:
+* https://adamtheautomator.com/powershell-classes/
+
 ---
 
 ### Example

@@ -155,6 +155,7 @@ Note:
 * [AdamTheAutomator.cem](https://adamtheautomator.com/tag/powershell/)
 * [Reddit](https://www.reddit.com/r/PowerShell/)
 * [Lorem ipsum](https://poshcode.gitbook.io/powershell-practice-and-style/)
+* [Some blog](https://thesysadminchannel.com/powershell/)
 
 ---
 
@@ -166,7 +167,6 @@ Note:
 ### Tools
 * [PowerShell](https://github.com/PowerShell/PowerShell)
 * [Pester](https://pester.dev/)
-* [Psake](https://github.com/psake/psake)
 * [Windows Terminal](https://github.com/Microsoft/Terminal)
 * [VS Code](https://code.visualstudio.com/)
   - [PowerShell Language Support](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)

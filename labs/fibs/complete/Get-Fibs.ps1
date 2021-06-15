@@ -1,3 +1,5 @@
+Set-StrictMode -Version Latest
+
 $limit = 4000000
 
 
@@ -7,7 +9,6 @@ function Get-Fibs($count) {
 
   for ($i = 0; $i -lt $count; $i += 1) {
     Write-Output $previous
-    $numbers += $previous
     $next = $current + $previous
     $previous = $current
     $current = $next
@@ -15,7 +16,7 @@ function Get-Fibs($count) {
 }
 
 function Get-Sum {
-  [OutputType([int])]
+  [OutputType([string])]
   Param(
     [Parameter(ValueFromPipeline = $true)]
     [int]$n

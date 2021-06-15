@@ -2,7 +2,6 @@ Set-StrictMode -Version Latest
 
 $limit = 4000000
 
-
 function Get-Fibs($count) {
   $previous = 1
   $current = 2

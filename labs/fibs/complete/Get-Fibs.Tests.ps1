@@ -1,5 +1,6 @@
-using module './Get-Fibs.ps1'
-
+BeforeAll {
+    Import-Module -Force $PSCommandPath.Replace('.Tests.ps1','.ps1')
+}
 Describe 'Get-Fibs' {
 
     It 'Should be 1 for 1' {

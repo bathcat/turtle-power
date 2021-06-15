@@ -1,5 +1,6 @@
-using module './Select-Sum.ps1'
-
+BeforeAll {
+    Import-Module -Force $PSCommandPath.Replace('.Tests.ps1','.ps1')
+}
 Describe 'Select-Sum' {
 
     It 'Should be 0 for @()' {

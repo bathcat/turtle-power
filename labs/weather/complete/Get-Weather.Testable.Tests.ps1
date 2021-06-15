@@ -32,3 +32,27 @@ Describe 'Get-ForecastUri' {
 
 }
 
+
+
+Describe 'Get-Forecast' {
+    
+    It 'Should parse json properly' {    
+        [string]$expected = New-Guid
+
+        Mock Invoke-RestMethod {
+            return ConvertFrom-Json '{
+                "properties": {
+                    "periods": [
+                        {
+                            "shortForecast": "Sunny"
+                        }
+                    ]
+                }
+            }'.Replace('Sunny',$expected)
+        }
+
+        Get-Forecast @{x=0;y=0;office=''} | 
+            Should -Be $expected        
+    }
+
+}

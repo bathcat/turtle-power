@@ -17,7 +17,6 @@ function Get-CurrentLocation {
 
     $uri = 'http://www.geoplugin.net/json.gp'
     $json = Invoke-RestMethod $uri
-    ([string]$json) >> resp.json
     return [Point]@{
         latitude  = $json.geoplugin_latitude;
         longitude = $json.geoplugin_longitude;
@@ -71,8 +70,16 @@ function Get-Forecast {
         [GridLocation]$location
     )
     process {
-        $json = Invoke-RestMethod -Uri (Get-ForecastUri $location)
+        [uri]$uri = Get-ForecastUri $location
+        $json = Invoke-RestMethod -Uri $uri 
         return $json.properties.periods[0].shortForecast
     }
 }
 
+function Get-Weather {
+    return Get-CurrentLocation |
+            Get-GridLocation |
+            Get-Forecast
+}
+
+Get-Weather

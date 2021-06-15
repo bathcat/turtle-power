@@ -1,8 +1,13 @@
 Set-StrictMode -Version Latest
 
-$limit = 4000000
-
-function Get-Fibs($count) {
+<#
+.SYNOPSIS
+  Gets terms of the fibonacci sequence
+.EXAMPLE
+  PS C:\> Get-Fibs 50
+  Gets the first 50 terms
+#>
+function Get-Fibs($count) {   
   $previous = 1
   $current = 2
 
@@ -14,6 +19,19 @@ function Get-Fibs($count) {
   }
 }
 
+<#
+.SYNOPSIS
+  Gets the sum of a sequence of numbers
+.EXAMPLE
+  PS C:\> <example usage>
+  Explanation of what the example does
+.INPUTS
+  Inputs (if any)
+.OUTPUTS
+  Output (if any)
+.NOTES
+  General notes
+#>
 function Get-Sum {
   [OutputType([string])]
   Param(
@@ -40,7 +58,7 @@ filter Select-Evens {
 }
 
 
-filter Select-InRange {
+filter Select-InRange([int]$limit = 4000000) {
   if ($_ -le $limit) {
     return $_
   }

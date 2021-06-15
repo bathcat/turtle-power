@@ -1,3 +1,8 @@
+$MyInvocation.MyCommand.Name
+$($MyInvocation.MyCommand.Name.Split('.'))[0] + "-$(get-date -format MMddyy_HHmmss).log" 
+
+return
+
 
 $td = "public class User{
   public readonly string name;

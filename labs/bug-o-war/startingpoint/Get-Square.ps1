@@ -1,3 +1,4 @@
+
 function Get-Square {
   [OutputType([int])]
   Param(

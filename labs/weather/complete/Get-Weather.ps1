@@ -12,6 +12,7 @@ class GridLocation {
 }
 
 function Get-CurrentLocation {
+    [CmdletBinding()]
     [OutputType([Point])]
     Param()
 
@@ -24,6 +25,7 @@ function Get-CurrentLocation {
 }
 
 function Get-GridLocation {
+    [CmdletBinding()]
     [OutputType([GridLocation])]
     Param(
         [Parameter(ValueFromPipeline, Mandatory)]
@@ -42,6 +44,7 @@ function Get-GridLocation {
 }
 
 function Get-Forecast {
+    [CmdletBinding()]
     [OutputType([string])]
     Param(
         [Parameter(ValueFromPipeline, Mandatory)]

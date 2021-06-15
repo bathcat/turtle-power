@@ -9,8 +9,8 @@ function Get-Fortune {
     [OutputType([string])]
     Param()
 
-    Get-Item $path |
-        Get-Content |
-        Sort-Object -Property @{Expression = { Get-Random } } |
-        Select-Object -First 1
+    return Get-Item $path |
+            Get-Content |
+            Sort-Object -Property @{Expression = { Get-Random } } |
+            Select-Object -First 1
 }

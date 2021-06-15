@@ -71,6 +71,7 @@ $info.department = 'sales'
 
 Note:
 * https://adamtheautomator.com/powershell-classes/
+* https://github.com/Stephanevg/PSClassUtils
 
 ---
 

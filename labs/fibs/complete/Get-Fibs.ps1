@@ -1,4 +1,4 @@
-Set-StrictMode -Version Latest
+﻿Set-StrictMode -Version Latest
 
 <#
 .SYNOPSIS
@@ -7,7 +7,7 @@ Set-StrictMode -Version Latest
   PS C:\> Get-Fibs 50
   Gets the first 50 terms
 #>
-function Get-Fibs($count) {   
+function Get-Fibs($count) {
   $previous = 1
   $current = 2
 

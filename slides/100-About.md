@@ -146,9 +146,7 @@ Note:
 
 ### Comparisons
 
-
 ---
-
 
 ### Resources: Reading
 

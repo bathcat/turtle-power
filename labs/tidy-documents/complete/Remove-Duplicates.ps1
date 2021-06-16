@@ -1,5 +1,5 @@
-using namespace System.Management.Automation
- 
+﻿using namespace System.Management.Automation
+
 # Good writeup here:
 #  https://powershell.one/tricks/filesystem/finding-duplicate-files
 

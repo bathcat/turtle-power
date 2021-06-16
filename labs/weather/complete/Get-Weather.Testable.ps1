@@ -1,4 +1,4 @@
-Set-StrictMode -Version Latest
+﻿Set-StrictMode -Version Latest
 
 class Point {
     [int]$latitude
@@ -61,7 +61,7 @@ function Get-ForecastUri {
         return "https://api.weather.gov/gridpoints/$($location.office)/$($location.x),$($location.y)/forecast"
     }
 }
-  
+
 
 function Get-Forecast {
     [OutputType([string])]
@@ -71,7 +71,7 @@ function Get-Forecast {
     )
     process {
         [uri]$uri = Get-ForecastUri $location
-        $json = Invoke-RestMethod -Uri $uri 
+        $json = Invoke-RestMethod -Uri $uri
         return $json.properties.periods[0].shortForecast
     }
 }

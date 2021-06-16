@@ -56,7 +56,8 @@
         {
             "label": "Lint-Fix",
             "type": "shell",
-            "command": "Invoke-ScriptAnalyzer -Path ./labs -Recurse -Settings ./PSScriptAnalyzerSettings.psd1 -Fix"
+            "command": "Invoke-ScriptAnalyzer -Path ./labs -Recurse -Settings ./PSScriptAnalyzerSettings.psd1 -Fix",
+            "problemMatcher": []
         }
     ]
 }

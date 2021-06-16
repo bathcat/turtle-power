@@ -1,7 +1,7 @@
-Set-StrictMode -Version Latest
+﻿Set-StrictMode -Version Latest
 
 #region demo-setup
-New-Variable AssetsRoot "$(Split-Path $PSScriptRoot)/_assets" -Option Readonly, Private -Force 
+New-Variable AssetsRoot "$(Split-Path $PSScriptRoot)/_assets" -Option Readonly, Private -Force
 
 Import-Module -Force $AssetsRoot/Reset-Demo.ps1
 

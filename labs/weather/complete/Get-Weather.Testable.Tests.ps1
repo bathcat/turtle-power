@@ -1,4 +1,4 @@
-BeforeAll {
+﻿BeforeAll {
     Import-Module -Force $PSCommandPath.Replace('.Tests.ps1','.ps1')
 }
 
@@ -9,8 +9,8 @@ Describe 'Get-GridLocationUri' {
             latitude=25;
             longitude=33;
         }
-        
-        Get-GridLocationUri $location | 
+
+        Get-GridLocationUri $location |
             Should -Be "https://api.weather.gov/points/25,33"
     }
 
@@ -18,15 +18,15 @@ Describe 'Get-GridLocationUri' {
 
 
 Describe 'Get-ForecastUri' {
-    
-    It 'Should format properly' {    
+
+    It 'Should format properly' {
         $location = @{
             office='xyz';
             x=25;
             y=33;
         }
-        
-        Get-ForecastUri $location | 
+
+        Get-ForecastUri $location |
             Should -Be "https://api.weather.gov/gridpoints/xyz/25,33/forecast"
     }
 
@@ -35,8 +35,8 @@ Describe 'Get-ForecastUri' {
 
 
 Describe 'Get-Forecast' {
-    
-    It 'Should parse json properly' {    
+
+    It 'Should parse json properly' {
         [string]$expected = New-Guid
 
         Mock Invoke-RestMethod {
@@ -51,8 +51,8 @@ Describe 'Get-Forecast' {
             }'.Replace('Sunny',$expected)
         }
 
-        Get-Forecast @{x=0;y=0;office=''} | 
-            Should -Be $expected        
+        Get-Forecast @{x=0;y=0;office=''} |
+            Should -Be $expected
     }
 
 }

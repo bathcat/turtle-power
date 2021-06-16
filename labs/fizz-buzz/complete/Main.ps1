@@ -1,4 +1,4 @@
-function Get-Message {
+﻿function Get-Message {
     [OutputType([string])]
     Param(
         [Parameter(ValueFromPipeline = $true)]

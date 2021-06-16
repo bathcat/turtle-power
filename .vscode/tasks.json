@@ -56,7 +56,6 @@
               "reveal": "always",
               "panel": "new"
             }
-
         },
         {
             "label": "Lint-Fix",

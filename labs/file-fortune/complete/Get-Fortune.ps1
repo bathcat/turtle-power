@@ -1,4 +1,4 @@
-Set-StrictMode -Version Latest
+﻿Set-StrictMode -Version Latest
 
 
 $path = Split-Path $PSCommandPath |
@@ -10,7 +10,7 @@ function Get-Fortune {
     Param()
 
     return Get-Item $path |
-            Get-Content |
-            Sort-Object -Property @{Expression = { Get-Random } } |
-            Select-Object -First 1
+        Get-Content |
+        Sort-Object -Property @{Expression = { Get-Random } } |
+        Select-Object -First 1
 }

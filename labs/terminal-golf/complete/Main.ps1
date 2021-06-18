@@ -15,11 +15,11 @@ Get-Help Invoke-RestMethod -Examples
 # 2. Get a list of processes for VS Code (the application is named 'code')
 #
 
-Get-Process -name code
+Get-Process -Name code
 
 ## Better:
 
-Get-Process | ? Name -like '*code*'
+Get-Process | ? Name -Like '*code*'
 
 
 

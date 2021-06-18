@@ -78,8 +78,8 @@ function Get-Forecast {
 
 function Get-Weather {
     return Get-CurrentLocation |
-            Get-GridLocation |
-            Get-Forecast
+        Get-GridLocation |
+        Get-Forecast
 }
 
 Get-Weather

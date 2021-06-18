@@ -15,5 +15,11 @@
        PSAvoidUsingCmdletAliases = @{
            Whitelist = @("%","?")
        }
+       PSUseCorrectCasing = @{
+           Enable = $true
+       }
+       PSUseConsistentIndentation = @{
+           Enable = $true
+       }
     }
 }

@@ -1,4 +1,4 @@
-Set-StrictMode -Version Latest
+﻿Set-StrictMode -Version Latest
 
 <#
 .SYNOPSIS
@@ -7,14 +7,14 @@ Set-StrictMode -Version Latest
   Sequence of integers
 #>
 filter Select-Evens {
-  if ($_ % 2 -eq 0) {
-    return $_
-  }
+    if ($_ % 2 -eq 0) {
+        return $_
+    }
 }
 
 
 filter Select-InRange([int]$limit = 4000000) {
-  if ($_ -le $limit) {
-    return $_
-  }
+    if ($_ -le $limit) {
+        return $_
+    }
 }

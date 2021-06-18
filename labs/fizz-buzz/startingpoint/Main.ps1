@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
   Gets the FizzBuzz message associated with a number.
 .INPUTS
@@ -7,7 +7,7 @@
   The string message for the number.
 #>
 function Get-Message($i) {
-  return [string]$i;
+    return [string]$i;
 }
 
 Get-Message 1

@@ -1,4 +1,4 @@
-Set-StrictMode -Version Latest
+﻿Set-StrictMode -Version Latest
 
 <#
 .SYNOPSIS
@@ -14,20 +14,20 @@ Set-StrictMode -Version Latest
   General notes
 #>
 function Select-Sum {
-  [OutputType([string])]
-  Param(
-    [Parameter(ValueFromPipeline = $true)]
-    [int]$n
-  )
-  begin {
-    $sum = 0
-  }
+    [OutputType([string])]
+    Param(
+        [Parameter(ValueFromPipeline = $true)]
+        [int]$n
+    )
+    begin {
+        $sum = 0
+    }
 
-  process {
-    $sum += $n
-  }
+    process {
+        $sum += $n
+    }
 
-  end {
-    return $sum
-  }
+    end {
+        return $sum
+    }
 }

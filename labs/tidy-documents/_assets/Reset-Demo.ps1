@@ -2,43 +2,43 @@
 
 
 function Reset-Demo {
-    [cmdletbinding(SupportsShouldProcess)]
-    param (
-        [Parameter(Mandatory)]
-        [string]$root
-    )
-    $folders = "$root/Documents/Videos",
-    "$root/Downloads/Pensky",
-    "$root/Templates"
+   [cmdletbinding(SupportsShouldProcess)]
+   param (
+      [Parameter(Mandatory)]
+      [string]$root
+   )
+   $folders = "$root/Documents/Videos",
+   "$root/Downloads/Pensky",
+   "$root/Templates"
 
-    $files = (
-        @{
-            path = "$root/Documents/Videos/stuff.txt"
-            content = $words
-        },
-        @{
-            path = "$root/Downloads/Pensky/notes.md"
-            content = $words
-        }
-    )
+   $files = (
+      @{
+         path = "$root/Documents/Videos/stuff.txt"
+         content = $words
+      },
+      @{
+         path = "$root/Downloads/Pensky/notes.md"
+         content = $words
+      }
+   )
 
-    if (-not $PSCmdlet.ShouldProcess($root)) {
-        foreach ($path in $folders) {
-            Write-Host "`t" -NoNewline
-            New-Item -Path $path -ItemType Directory -Force -WhatIf
-        }
-        foreach ($info in $files) {
-            Write-Host "`t" -NoNewline
-            New-Item -Path $info.path -ItemType File -Force -WhatIf -Value info.content
-        }
+   if (-not $PSCmdlet.ShouldProcess($root)) {
+      foreach ($path in $folders) {
+         Write-Host "`t" -NoNewline
+         New-Item -Path $path -ItemType Directory -Force -WhatIf
+      }
+      foreach ($info in $files) {
+         Write-Host "`t" -NoNewline
+         New-Item -Path $info.path -ItemType File -Force -WhatIf -Value info.content
+      }
 
-        return
-    }
+      return
+   }
 
-    New-Item -Path $folders -ItemType Directory -Force
-    foreach ($info in $files) {
-        Write-Host "`t" -NoNewline
-        New-Item -Path $info.path -ItemType File -Force -Value $info.content
-    }
+   New-Item -Path $folders -ItemType Directory -Force
+   foreach ($info in $files) {
+      Write-Host "`t" -NoNewline
+      New-Item -Path $info.path -ItemType File -Force -Value $info.content
+   }
 
 }

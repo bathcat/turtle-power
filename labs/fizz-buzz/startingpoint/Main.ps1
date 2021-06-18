@@ -7,7 +7,7 @@
   The string message for the number.
 #>
 function Get-Message($i) {
-    return [string]$i;
+   return [string]$i;
 }
 
 Get-Message 1

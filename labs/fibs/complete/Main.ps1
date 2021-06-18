@@ -6,6 +6,6 @@ using module './Select-Sum.ps1'
 "Here is your answer: "
 
 Get-Fibs 60 |
-    Select-InRange |
-    Select-Evens |
-    Select-Sum
+   Select-InRange |
+   Select-Evens |
+   Select-Sum

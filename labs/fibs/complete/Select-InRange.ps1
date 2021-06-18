@@ -5,7 +5,7 @@
   Filters nubers with a specified range.
 #>
 filter Select-InRange([int]$limit = 4000000) {
-    if ($_ -le $limit) {
-        return $_
-    }
+   if ($_ -le $limit) {
+      return $_
+   }
 }

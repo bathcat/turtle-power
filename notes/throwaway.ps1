@@ -1,22 +1,14 @@
-$MyInvocation.MyCommand.Name
-$($MyInvocation.MyCommand.Name.Split('.'))[0] + "-$(get-date -format MMddyy_HHmmss).log" 
+﻿$MyInvocation.MyCommand.Name
+$($MyInvocation.MyCommand.Name.Split('.'))[0] + "-$(Get-Date -Format MMddyy_HHmmss).log"
 
 return
 
 
-$td = "public class User{
-  public readonly string name;
-  public readonly int id;
 
-  public User(string name, int id){
-    this.name = name;
-    this.id=id;
-  }
-}"
 
 
 $args = @{
-  TypeDefinition = @"
+    TypeDefinition = @"
 public static class Mathy{
   public static int Add(int a, int b){
     return (a + b);
@@ -26,18 +18,18 @@ public static class Mathy{
 }
 
 Add-Type @args
-[Mathy]::Add(5,19)
+[Mathy]::Add(5, 19)
 
 
 return
 
-class User{
+class User {
     [int]$id
     [string]$name
 }
 $admin = [User]@{
-  id=0
-  name='administrator'
-  handle='jerry'
+    id = 0
+    name = 'administrator'
+    handle = 'jerry'
 }
 $admin

@@ -1,6 +1,6 @@
-Set-StrictMode -Version Latest
+﻿Set-StrictMode -Version Latest
 
-function Get-Fortune{
+function Get-Fortune {
     [OutputType([string])]
     Param(
         [uri]

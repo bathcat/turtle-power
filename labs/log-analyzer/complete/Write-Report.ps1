@@ -1,8 +1,8 @@
 ﻿Import-Module $PSScriptRoot/Build-Report.ps1 -Force
 
-function Write-Report{
+function Write-Report {
     Param(
-        [Parameter(Mandatory=$true)]
+        [Parameter(Mandatory = $true)]
         $logFile,
         [Parameter()]
         $reportFolder = 'dist'
@@ -10,7 +10,7 @@ function Write-Report{
 
     $file = Join-Path $reportFolder 'report.html'
 
-    if(-not (Test-Path $reportFolder)){
+    if (-not (Test-Path $reportFolder)) {
         New-Item -Path $reportFolder -ItemType Directory | Out-Null
     }
 
@@ -19,10 +19,10 @@ function Write-Report{
     Build-Report $logFile | Out-File -FilePath $file
 
     Write-Verbose "Opening browser"
-    try{
+    try {
         Invoke-Item $file
     }
-    catch [System.ComponentModel.Win32Exception]{
+    catch [System.ComponentModel.Win32Exception] {
         Write-Verbose "Unable to open web browser-- this happens with the docker thing."
         Write-Verbose "But your report is still there: $file"
     }

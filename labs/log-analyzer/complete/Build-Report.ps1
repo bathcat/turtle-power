@@ -1,8 +1,8 @@
 ﻿Import-Module $PSScriptRoot/Read-Entry.ps1 -Force
 
-function Build-Report{
+function Build-Report {
     Param(
-        [Parameter(Mandatory=$true)]
+        [Parameter(Mandatory = $true)]
         [ValidateNotNullOrEmpty()]
         $logFile
     )
@@ -16,11 +16,11 @@ function Build-Report{
         ConvertTo-Html -Fragment
 
     $badThings = $entries |
-        ?{$_.severity -in @('WARNING','PROTERR')} |
+        ? { $_.severity -in @('WARNING', 'PROTERR') } |
         ConvertTo-Html -Fragment
 
 
-    $body= "
+    $body = "
     <style>th{color:green;}</style>
     <h1>Summary</h1>
     $summary

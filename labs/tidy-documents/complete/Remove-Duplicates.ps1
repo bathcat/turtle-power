@@ -3,7 +3,7 @@
 # Good writeup here:
 #  https://powershell.one/tricks/filesystem/finding-duplicate-files
 
-class FileSet{
+class FileSet {
     [System.IO.FileInfo[]]$files
 }
 
@@ -12,7 +12,7 @@ function Find-DuplicateFiles {
     [OutputType([FileSet[]])]
     param (
         [Parameter(Mandatory)]
-        [ValidateScript({Test-Path $_})]
+        [ValidateScript( { Test-Path $_ })]
         [string]$path
     )
 
@@ -22,24 +22,24 @@ function Find-DuplicateFiles {
         # Group-Object -Property Length |
         # ? Count -gt 1 |
         # % Group |
-        Group-Object -Property @{Expression = { (Get-FileHash $_).Hash }} |
+        Group-Object -Property @{Expression = { (Get-FileHash $_).Hash } } |
         ? Count -GT 1 |
-        % {[Fileset]@{files=$_.Group}}
+        % { [Fileset]@{files = $_.Group } }
 }
 
-function Compress-DuplicateFiles{
+function Compress-DuplicateFiles {
     [CmdletBinding(
         SupportsShouldProcess,
         ConfirmImpact = 'High'
     )]
     param (
-        [Parameter(Mandatory,ValueFromPipeline)]
+        [Parameter(Mandatory, ValueFromPipeline)]
         [FileSet]$set,
         [Switch]$Force
     )
 
     process {
-        if ($Force){
+        if ($Force) {
             $ConfirmPreference = 'None'
         }
 
@@ -48,11 +48,11 @@ function Compress-DuplicateFiles{
         $redundancies = $paths | Select-Object -Skip 1
 
         $reason = [ShouldProcessReason]::None
-        $shouldProcess = $PSCmdlet.ShouldProcess('MESSAGE','TARGET','OPERATION',[ref]$reason)
+        $shouldProcess = $PSCmdlet.ShouldProcess('MESSAGE', 'TARGET', 'OPERATION', [ref]$reason)
 
         [bool]$isWhatif = $reason -eq [ShouldProcessReason]::WhatIf
 
-        if((-not $shouldProcess) -and (-not $isWhatif )){
+        if ((-not $shouldProcess) -and (-not $isWhatif )) {
             return;
         }
         foreach ($path in $redundancies) {

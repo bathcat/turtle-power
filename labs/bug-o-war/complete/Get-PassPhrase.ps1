@@ -3,7 +3,7 @@
     -Value 'chicken', 'galavant', 'desk', 'Timothy', 'seven' `
     -Option Private, Constant
 
-function Get-PassPhrase{
+function Get-PassPhrase {
     [OutputType([string])]
 
     param(

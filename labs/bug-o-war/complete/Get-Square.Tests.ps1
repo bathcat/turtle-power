@@ -1,5 +1,5 @@
-BeforeAll {
-    Import-Module -Force $PSCommandPath.Replace('.Tests.ps1','.ps1')
+﻿BeforeAll {
+    Import-Module -Force $PSCommandPath.Replace('.Tests.ps1', '.ps1')
 }
 
 Describe 'Get-Square' {
@@ -13,7 +13,7 @@ Describe 'Get-Square' {
     }
 
     It 'Should work mapped' {
-        1,2,3 | Get-Square | Should -Be 1,4,9
+        1, 2, 3 | Get-Square | Should -Be 1, 4, 9
     }
 
 

@@ -18,7 +18,7 @@ function Get-CurrentLocation {
     $uri = 'http://www.geoplugin.net/json.gp'
     $json = Invoke-RestMethod $uri
     return [Point]@{
-        latitude  = $json.geoplugin_latitude;
+        latitude = $json.geoplugin_latitude;
         longitude = $json.geoplugin_longitude;
     }
 }
@@ -41,11 +41,11 @@ function Get-GridLocation {
         [Parameter(ValueFromPipeline = $true)]
         [Point]$point
     )
-    process{
+    process {
         $json = Invoke-RestMethod -Uri (Get-GridLocationUri $point)
         return [GridLocation]@{
-            x      = $json.properties.gridX;
-            y      = $json.properties.gridY;
+            x = $json.properties.gridX;
+            y = $json.properties.gridY;
             office = $json.properties.cwa;
         }
     }

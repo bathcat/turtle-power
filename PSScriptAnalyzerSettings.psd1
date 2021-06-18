@@ -10,6 +10,8 @@
 @{
     ExcludeRules = @('PSAvoidUsingWriteHost')
 
+
+
     # You can use rule configuration to configure rules that support it:
     Rules = @{
        PSAvoidUsingCmdletAliases = @{
@@ -19,6 +21,15 @@
            Enable = $true
        }
        PSUseConsistentIndentation = @{
+           Enable = $true
+       }
+       PSAvoidOverwritingBuiltInCmdlets = @{
+           Enable = $true
+       }
+       PSUseCorrectCasing = @{
+           Enable = $true
+       }
+       PSUseConsistentWhitespace = @{
            Enable = $true
        }
     }

@@ -1,10 +1,10 @@
 ﻿function Get-Square {
     [OutputType([int])]
     Param(
-        [Parameter(ValueFromPipeline=$true)]
+        [Parameter(ValueFromPipeline = $true)]
         [int]$x
     )
-    process{
+    process {
         return $x * $x
     }
 }

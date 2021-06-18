@@ -1,13 +1,13 @@
 ﻿BeforeAll {
-    Import-Module -Force $PSCommandPath.Replace('.Tests.ps1','.ps1')
+    Import-Module -Force $PSCommandPath.Replace('.Tests.ps1', '.ps1')
 }
 
 Describe 'Get-GridLocationUri' {
 
     It 'Should format properly' {
         $location = @{
-            latitude=25;
-            longitude=33;
+            latitude = 25;
+            longitude = 33;
         }
 
         Get-GridLocationUri $location |
@@ -21,9 +21,9 @@ Describe 'Get-ForecastUri' {
 
     It 'Should format properly' {
         $location = @{
-            office='xyz';
-            x=25;
-            y=33;
+            office = 'xyz';
+            x = 25;
+            y = 33;
         }
 
         Get-ForecastUri $location |
@@ -48,10 +48,10 @@ Describe 'Get-Forecast' {
                         }
                     ]
                 }
-            }'.Replace('Sunny',$expected)
+            }'.Replace('Sunny', $expected)
         }
 
-        Get-Forecast @{x=0;y=0;office=''} |
+        Get-Forecast @{x = 0; y = 0; office = '' } |
             Should -Be $expected
     }
 

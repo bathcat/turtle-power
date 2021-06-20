@@ -1,4 +1,4 @@
-# Structure
+# Collections
 
 ---
 
@@ -9,7 +9,7 @@
 
 ---
 
-## Collections
+## Lists
 
 ---
 

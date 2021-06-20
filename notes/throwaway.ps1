@@ -1,5 +1,5 @@
 ﻿
-function Get-Self{
+function Get-Self {
   Param(
     [array]$Self = @()
   )

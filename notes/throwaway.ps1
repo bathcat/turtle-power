@@ -1,4 +1,46 @@
-﻿[Flags()] enum Fixins {
+﻿
+function Get-Self{
+  Param(
+    [array]$Self = @()
+  )
+  Write-Output $Self -NoEnumerate
+}
+(Get-Self @('x','y','z')).GetType()
+(Get-Self @('x')).GetType()
+
+return
+
+function Get-Pi{
+  [OutputType([float])]
+  Param()
+  return "Apple"
+}
+"Expected type: "
+(Get-Command Get-Pi).OutputType.Name
+
+"`nActual type: "
+(Get-Pi).GetType().Name
+
+
+return 
+
+function Select-Sum{
+  [OutputType(int)]
+  Param(
+    [int]$A,
+    [int]$B
+  )
+  $result = $A + $B
+  Write-Debug "Result is: $result"
+  return $result
+}
+$sum = Select-Sum 11 ,'chicken', 44
+
+$sum
+
+return
+
+[Flags()] enum Fixins {
   None = 0
   Pickles = 1
   Onions = 2
@@ -12,7 +54,7 @@ function New-Burger{
   return "New burger with $Fixins"
 }
 
-New-Burger 'Pickles','None'
+New-Burger 'Pickles', 'None'
 
 
 return

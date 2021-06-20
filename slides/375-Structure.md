@@ -25,9 +25,39 @@
 
 ### Syntax
 ```powershell
-$xs = 1,2,3
-$ys = 'danish','strudle',3.14
-$zs = @(1)
+$ws = 1,2,3
+$xs = 'danish','strudle',3.14
+$ys = @(1)
+$zs = ,'chicken'
+```
+
+---
+
+### Gotcha: Automatic Enumeration
+```powershell
+function Get-Self{
+  Param(
+    [array]$Self = @()
+  )
+  return $Self
+}
+(Get-Self @('x','y','z')).GetType()
+(Get-Self @('x')).GetType()
+
+```
+
+--- 
+
+### Fixed
+```powershell
+function Get-Self{
+  Param(
+    [array]$Self = @()
+  )
+  Write-Output $Self -NoEnumerate
+}
+(Get-Self @('x','y','z')).GetType()
+(Get-Self @('x')).GetType()
 ```
 
 ---

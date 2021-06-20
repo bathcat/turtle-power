@@ -23,6 +23,15 @@ Note:
 
 ---
 
+### Motivation
+```powershell
+
+
+```
+
+
+--- 
+
 ### Example
 ```powershell
 class User{
@@ -55,6 +64,22 @@ $admin = [User]@{
   handle='jerry'
 }
 ```
+
+---
+
+### Shortcomings
+* **Ergonomics** 
+  - Doesn't feel like Powershell
+  - Not discoverable
+  - Ignored by [`Import-Module`](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/import-module)
+* Always mutable
+
+---
+
+### Advice
+* Use classes for POCO/POJO
+* Package with cmdlet for creating
+
 ---
 
 ## Enumerations
@@ -136,3 +161,4 @@ function New-Burger{
 New-Burger 'Pickles','Onions'
 ```
 
+---

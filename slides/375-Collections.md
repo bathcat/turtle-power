@@ -62,16 +62,31 @@ function Get-Self{
 
 ---
 
-## Dictionaries
+## Hash Tables
 
 ---
 
-### Overview
-* Aka
+### [Overview](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_hash_tables)
+* Associates keys with values
+* Rules
+  1. Keys should be immutable
+  1. Values are anything
+* Also known as
   - Map
+  - Dictionary
   - Associative array
-* Ipsum
-* Sic dolor
+
+---
+
+### Examples
+```powershell
+$words = @{
+  fancy = 'plethora', 'eschew'
+  plain = 'big', 'lots', 'some'
+}
+$user = @{id=12;name='jbloggs'}
+```
+
 
 ---
 

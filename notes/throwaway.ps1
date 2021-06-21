@@ -1,4 +1,10 @@
 ﻿
+
+function 
+
+
+return
+
 function Get-Self {
   Param(
     [array]$Self = @()

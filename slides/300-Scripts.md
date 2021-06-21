@@ -13,7 +13,7 @@
 
 ---
 
-### Ipsum
+### [Overview](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_scripts)
 * Lorem
 * Ipsum
 * Sic dolor
@@ -40,12 +40,13 @@ Get-ChildItem `
 
 ---
 
-### Overview
+### [Overview](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_variables)
 * Prefixed with `$`
 ```powershell
 New-Variable -Name PI -Value 3.14 -Option Constant
 Write-Host $PI
 ```
+
 ---
 
 ### Typing

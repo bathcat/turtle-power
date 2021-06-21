@@ -9,89 +9,81 @@
 
 ---
 
-## Lorem
+## Overview
 
 ---
 
-### Ipsum
+### [Overview](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_pipelines)
 * Lorem
 * Ipsum
 * Sic dolor
 
----
-
-## Misc
-
-
----
-
-
-### Verb-Noun
-* Verbs are on the approved list
-  - It's customizable
-* Nouns are whatever
-  - But consistent across related operations
-
----
-
-### Tab-Completion
-* Type `Get-`
-* Works for parameters too
-
----
-
-### Parameters
-* Passed by name
-```
-Get-Command 'Get-Help'
-```
-* Name
-```
-Get-Command -Name 'Get-Help' 
-```
-* Mix
-```
-Get-Command 'Get-Help' -OnLine
-```
----
-
-### Flags
-* Presence opts you in
-```
-Get-Help Get-ChildItem -Examples
+```powershell
+Get-Process notepad | Stop-Process
 ```
 
 ---
 
-### Flag: Whatif
+### Multiline
+```powershell
+Get-Process notepad | 
+  Stop-Process
+```
+
+---
+
+### Filtering
+```powershell
+Get-Command | 
+  Where-Object {$_.Name -like '*job*'}
+```
+
+---
+
+### Sorting
+```powershell
+Get-Verb | 
+  Sort-Object -Property Verb
+```
+
+---
+
+### Transforming
+```powershell
+Get-Service | 
+  Foreach-Object {$_.Name + " is " + $_.Status}
+```
+
+---
+
+### Stacking
+```powershell
+Get-Process | 
+  Where-Object {$_.ProcessName -ne 'explorer'} | 
+  Sort-Object -Property WorkingSet -Descending | 
+  Select-Object -First 5
+```
+
+---
+
+## Stream Flavors
+
+---
+
+### Overview
+1. Success
+1. Error
+1. Warning
+1. Verbose
+1. Debug
+1. Information
+
+
+---
+
+### [Redirection](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_redirection)
 * Lorem
 * Ipsum
-* Sic dolor
 
 ---
-
-### Aliases
-* Alternative version of command to
-  - Save keystrokes (alegedly)
-  - Be familiar
-* Examples
-Get-ChildItem gci dir ls
-Set-Location cd chdir
-Write-Output echo
-mkdir
- rmdir
-
----
-
-### Against Aliases
-* Problems
-  - Consistency
-  - Readability
-  - Syntax-completion minimizes typing anyway
-* Consider
-  - Removing them altogether
-  - Picking a consistent set
-
-### Script: Unalias
-
 

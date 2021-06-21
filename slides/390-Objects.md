@@ -54,6 +54,9 @@ $admin = [User]@{
 }
 ```
 
+Note:
+* https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_object_creation
+
 ---
 
 #### Fail

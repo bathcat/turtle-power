@@ -34,13 +34,14 @@ Note:
 
 ### Return Values
 * Explicit via
-  - Keyword `return`
+  - Keyword [`return`](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_return)
   - Cmdlet [`Write-Output`](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-output)
 * Implicit via... anything else
 
 ---
 
 ### Example
+#### What's the output?
 ```powershell
 function Select-Sum($A, $B){
   $result = $A + $B

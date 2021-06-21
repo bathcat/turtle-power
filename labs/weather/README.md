@@ -39,6 +39,7 @@ In the example--
 
 
 ## Hints
+* Good article on JSON and Powershell [here](https://adamtheautomator.com/powershell-json/)
 * To get just the 'short forecast' from the weather.gov forecast JSON:
 ```powershell
 $response.properties.periods[0].shortForecast

@@ -120,6 +120,12 @@ Note:
 
 ---
 
+### [Common Parameters](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_commonparameters)
+* Lorem
+* Ipsum
+
+---
+
 ### Aliases
 * Alternative version of command to
   - Save keystrokes (alegedly)

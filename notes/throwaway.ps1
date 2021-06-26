@@ -1,6 +1,16 @@
-﻿
+﻿class Account{
+  [int]$id
+  [string]$login
+  [string[]]$roles
+}
 
-function 
+$users = @(
+  [Account]@{id=11;login='jbloggs';roles='admin','remoteUser'},
+  [Account]@{id=12;login='jdoe';roles='admin','contractor'},
+  [Account]@{id=13;login='ksun';} 
+)
+
+$users
 
 
 return

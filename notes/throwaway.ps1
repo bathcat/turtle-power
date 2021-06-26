@@ -1,17 +1,12 @@
-﻿class Account{
-  [int]$id
-  [string]$login
-  [string[]]$roles
+﻿$i = 0
+while ($true){
+  Write-Host $i
+  $i++
+  if($i -gt 3){
+    break
+  }
 }
-
-$users = @(
-  [Account]@{id=11;login='jbloggs';roles='admin','remoteUser'},
-  [Account]@{id=12;login='jdoe';roles='admin','contractor'},
-  [Account]@{id=13;login='ksun';} 
-)
-
-$users
-
+Write-Host 'Done'
 
 return
 

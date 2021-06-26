@@ -2,9 +2,11 @@
 
 class Entry {
    [datetime]$timestamp
+   [int]$userID
    [string]$severity
    [string]$operation
    [string]$message
+   [string]$details
 }
 
 function Read-Timestamp {
@@ -28,38 +30,6 @@ function Read-Timestamp {
    }
 }
 
-function Read-Severity {
-   [OutputType([string])]
-   Param(
-      [Parameter(ValueFromPipeline = $true)]
-      [string]$logEntry
-   )
-   process {
-      return $logEntry.Substring(15, 7).Trim()
-   }
-}
-
-function Read-Operation {
-   [OutputType([string])]
-   Param(
-      [Parameter(ValueFromPipeline = $true)]
-      [string]$logEntry
-   )
-   process {
-      return $logEntry.Substring(23).Replace(".", "").Split(":")[0];
-   }
-}
-
-function Read-Message {
-   [OutputType([string])]
-   Param(
-      [Parameter(ValueFromPipeline = $true)]
-      [string]$logEntry
-   )
-   process {
-      return $logEntry.Substring(23).Replace(".", "").Split(":")[1].Trim();
-   }
-}
 
 function Read-Entry {
    [OutputType([Entry])]
@@ -68,10 +38,16 @@ function Read-Entry {
       [string]$logEntry
    )
 
-   process { return [Entry]@{
-         timestamp = Read-Timestamp $logEntry;
-         severity = Read-Severity $logEntry;
-         operation = Read-Operation $logEntry;
-         message = Read-Message $logEntry;
-      } }
+   process {
+      $fields = $logEntry -split '[|]'
+
+      return [Entry]@{
+         timestamp = Read-Timestamp $fields[0]
+         severity = $fields[1].Trim()
+         userID = $fields[2].Trim()
+         operation = $fields[3].Trim()
+         message = $fields[4].Trim()
+         details = $fields.Length -eq 6 ? $fields[5].Trim() : ''
+      }
+   }
 }

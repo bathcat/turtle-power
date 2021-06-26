@@ -228,7 +228,7 @@
 02/12 11:04:35 | TRACE | 829914 | :......rsvp_event_propagate: flow[session=9.67.116.99:1047:6, source=9.67.116.98:8000] ceased
 02/12 11:04:35 | EVENT | 829913 | :.....api_reader: api request CLOSE
 02/12 11:04:35 | INFO | 829913 | :.......rsvp_flow_stateMachine: state SESSIONED, event PATHTEAR
-02/12 11:04:35 | PROTERR| 829913 | :.......rsvp_flow_stateMachine: state SESSIONED does not expect event PATHTEAR
+02/12 11:04:35 | PROTERR | 829913 | :.......rsvp_flow_stateMachine: state SESSIONED does not expect event PATHTEAR
 02/12 11:04:53 | EVENT | 829912 | :..mailslot_sitter: process received signal SIGTERM
 02/12 11:04:53 | INFO | 829913 | :...check_signals: received TERM signal
 02/12 11:04:53 | INFO | 829914 | :......term_policyAPI: UnRegisterFromPolicyAPI:  Entering 

@@ -1,4 +1,5 @@
-﻿Import-Module $PSScriptRoot/Read-Entry.ps1 -Force
+﻿using module './Get-Users.psm1'
+Import-Module $PSScriptRoot/Read-Entry.ps1 -Force
 
 function Build-Report {
    Param(

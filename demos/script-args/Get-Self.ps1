@@ -1,0 +1,4 @@
+Param(
+   $Self
+)
+return $Self

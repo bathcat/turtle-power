@@ -1,4 +1,13 @@
-﻿$i = 0
+﻿
+$x = 5
+$y = 'a'
+[System.Math]::Pow($x,$y)
+
+
+
+return
+
+$i = 0
 while ($true){
   Write-Host $i
   $i++

@@ -1,4 +1,19 @@
-﻿function Remove-File {
+﻿using namespace System.IO
+
+$changeTypes = [WatcherChangeTypes]::Created, [WatcherChangeTypes]::Deleted
+$watcher = [FileSystemWatcher]::new('c:/temp/');
+
+while($true){
+  $result = $watcher.WaitForChanged($changeTypes, 5000)
+  if(-not $result.TimedOut){
+    "Got a change: $($result.ChangeType), $($result.Name)"
+  }
+}
+
+
+
+return
+function Remove-File {
   [CmdletBinding(
     SupportsShouldProcess,
     ConfirmImpact = 'High'

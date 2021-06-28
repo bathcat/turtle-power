@@ -1,5 +1,5 @@
 $greeting = 'Peace'
-function Get-HippieGreeting{
+function Get-Greeting{
     [OutputType([string])]
     Param(
         [string]$Name = 'man'
@@ -7,4 +7,4 @@ function Get-HippieGreeting{
     return "$greeting, $Name"
 }
 
-Export-ModuleMember Get-HippieGreeting
+Export-ModuleMember Get-Greeting

@@ -9,7 +9,7 @@
 @{
 
     # Script module or binary module file associated with this manifest.
-    RootModule = 'Get-HippieGreeting.psm1'
+    RootModule = 'Hippie.psm1'
 
     # Version number of this module.
     ModuleVersion     = '0.0.1'

@@ -1,7 +1,7 @@
 
 $greeting = 'Hola'
 
-function Get-SpanishGreeting{
+function Get-Greeting{
     [OutputType([string])]
     Param(
         [string]$Name = 'Amigo'
@@ -9,4 +9,4 @@ function Get-SpanishGreeting{
     return "$greeting, $Name"
 }
 
-Export-ModuleMember Get-SpanishGreeting
+Export-ModuleMember Get-Greeting

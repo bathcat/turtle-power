@@ -1,4 +1,86 @@
-﻿
+﻿function Remove-File {
+  [CmdletBinding(
+    SupportsShouldProcess,
+    ConfirmImpact = 'High'
+  )]
+  param(
+     [Parameter(Mandatory)]     
+     [string]$path
+  )
+  if ($PSCmdlet.ShouldProcess($path)) {
+    Remove-Item $path
+  }
+}
+
+Remove-File C:\temp\notes.txt
+
+return
+
+function Get-Self{
+  Param($Self)
+  return $Self
+}
+
+Get-Help Get-Self
+
+return
+function Write-Update{
+  param(
+    [Parameter(Mandatory)]
+    [ValidateLength(1, 100)]
+    [string] $Message,
+
+    [Parameter(Mandatory)]
+    [ValidateSet('Low', 'Medium', 'High')]
+    [string] $Severity,
+
+    [Parameter(Mandatory)]
+    [ValidateScript( { Test-Path $_ } )]
+    [string] $Path
+  )
+  Write-Host "$Severity - $Message - $Path"
+}
+
+Write-Update "xyz" 'Low' C:\temp
+
+return
+function Select-Sum {
+  begin { $sum = 0 }
+  process { $sum += $_ }
+  end {return $sum}
+}
+
+Get-Process | % WorkingSet | Select-Sum
+
+return 
+function Save-Users{
+  begin { Write-Host "Opening DB connection" -ForegroundColor Yellow }
+
+  process { Write-Host "Saving $_" }
+  
+  end{ Write-Host 'Closing connection' -ForegroundColor Green }
+}
+
+1..5 | Save-Users
+
+
+return 
+function Select-Sum([int[]]$Xs) {
+  foreach($x in $Xs){
+    $sum += $x
+  }
+  return $sum
+}
+
+## Wrong answer
+$s1 = Get-Process | % WorkingSet | Select-Sum
+
+## Slightly ugly
+$sets = Get-Process | % WorkingSet
+$s2 = Select-Sum $sets
+
+return 
+
 $x = 5
 $y = 'a'
 [System.Math]::Pow($x,$y)

@@ -14,9 +14,9 @@
   General notes
 #>
 function Select-Sum {
-   [OutputType([string])]
+   [OutputType([int])]
    Param(
-      [Parameter(ValueFromPipeline = $true)]
+      [Parameter(ValueFromPipeline)]
       [int]$n
    )
    begin {

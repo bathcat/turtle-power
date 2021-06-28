@@ -8,8 +8,29 @@ class Color{
    [ValidateRange(0, 255)]
    [int]$blue
 
+   [void]Darken([int] $amount){
+      $this.green += $amount
+      $this.red += $amount
+      $this.blue += $amount
+   }
+
    [string]ToString(){
-      return "$($this.red), $($this.red), $($this.blue)"
+      return "$($this.red), $($this.green), $($this.blue)"
+   }
+
+}
+
+function Add-Darkness{
+   [CmdletBinding()]
+   [OutputType([Color])]
+   param(
+      [Color] $original,
+      [int] $amount
+   )
+   return [Color] @{
+      red = $original.red + $amount
+      green = $original.green + $amount
+      blue = $original.blue + $amount
    }
 }
 

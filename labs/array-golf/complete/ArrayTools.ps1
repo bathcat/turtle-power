@@ -38,8 +38,18 @@ function Get-Clone($Items) {
 .OUTPUTS
   list: List of partitions (which are lists)
 #>
-function Select-Partitons($Items, $PartitionSize = 2) {
-   return $Items
+function Select-Partitons {
+   param(
+      $Items,
+      $PartitionSize = 2
+  )
+  [array]$Rest = $Items
+  while($Rest.Length -gt $PartitionSize){
+      $Partition = $Rest[0..($PartitionSize-1)]
+      $Rest = $Rest[ $PartitionSize..($Rest.Length-1)]
+      Write-Output $Partition -NoEnumerate
+  }
+  Write-Output $Rest -NoEnumerate
 }
 
 

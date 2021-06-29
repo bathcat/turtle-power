@@ -1,4 +1,35 @@
 ﻿
+$xs = 1, 2, 3
+$head, $tail = $xs
+"Head: $head"
+"Tail: $tail"
+
+return 
+
+function Get-Self{
+  param(
+    $Self
+  )
+  Write-Output $Self -NoEnumerate 
+}
+
+$a = 1, 2, 3
+$b = Get-Self $a
+
+$a[0] = 'chicken'
+
+"`nHere is a: $a"
+"`nHere is b: $b"
+
+
+$a.GetType().IsByRef
+
+return
+
+$places = 'ocean', 'mountains', 'desert', 'jungle', 'forest', 'city'
+$indexes = 0, 3, 0, 4
+$places[$indexes]
+
 return
 
 Set-StrictMode -Version Latest

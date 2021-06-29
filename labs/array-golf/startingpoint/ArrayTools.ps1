@@ -9,7 +9,7 @@
    list: Subset, in the same order, with no duplicates.
 #>
 function Select-UniqueElements($Items) {
-   return $Items
+   Write-Output $Self
 }
 
 
@@ -25,7 +25,7 @@ function Select-UniqueElements($Items) {
   list: New list with identical contents
 #>
 function Get-Clone($Items) {
-   return $Items
+   Write-Output $Self -NoEnumerate
 }
 
 
@@ -39,7 +39,7 @@ function Get-Clone($Items) {
   list: List of partitions (which are lists)
 #>
 function Select-Partitons($Items, $PartitionSize = 2) {
-   return $Items
+   Write-Output $Self
 }
 
 
@@ -57,5 +57,5 @@ function Select-Partitons($Items, $PartitionSize = 2) {
       no nesting
 #>
 function Select-Flattened($Items) {
-   return $Items
+   Write-Output $Self
 }

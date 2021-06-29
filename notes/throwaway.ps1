@@ -1,4 +1,31 @@
-﻿using namespace System.IO
+﻿
+return
+
+Set-StrictMode -Version Latest
+function Write-Placement([string]$product, [int]$quantity) {
+  "I like $product. It's great!"
+  "You should buy $quantity of them."
+}
+
+Write-Placement
+
+return
+
+#Set-StrictMode -Version Latest
+function Get-Message{
+  param(
+    [string]$Path
+  )
+  return "Here is your path: $File"
+}
+
+Get-Message c:/temp
+
+
+
+return
+
+#using namespace System.IO
 
 $changeTypes = [WatcherChangeTypes]::Created, [WatcherChangeTypes]::Deleted
 $watcher = [FileSystemWatcher]::new('c:/temp/');

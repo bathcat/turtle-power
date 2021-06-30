@@ -1,6 +1,21 @@
-﻿
-$gradeEnrollment=@{}
-$gradeEnrollment.Add(4, 233)
-$gradeEnrollment.Add(5, 232)
+﻿function Get-Update{
+    [OutputType([string])]
+    [CmdletBinding()]
+    param(
+      [Parameter(Mandatory)]
+      [ValidateLength(10, 100)]
+      [string] $Message,
+  
+      [Parameter(Mandatory)]
+      [ValidateSet('Low', 'Medium', 'High')]
+      [string] $Severity,
+  
+       [Parameter(Mandatory)]
+       [ValidateScript( { Test-Path $_ } )]
+      [string] $Path
+    )
+    return "$Severity - $Message - $Path"
+}
 
-"Student count, grade 5: " + $gradeEnrollment[5]
+Get-Update -Message 'There is no spoon!!!!' -Severity 'Medium' -Path 'c:/temp'
+

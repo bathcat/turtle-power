@@ -5,6 +5,22 @@ class User {
    [string]$login
 }
 
+<#
+.SYNOPSIS
+Short description
+
+.DESCRIPTION
+Long description
+
+.PARAMETER Path
+Parameter description
+
+.EXAMPLE
+An example
+
+.NOTES
+General notes
+#>
 function Get-Users {
    [OutputType([User[]])]
    Param(
@@ -13,8 +29,8 @@ function Get-Users {
       [string]$Path
    )
    return Get-Content $Path |
-            ConvertFrom-Json |
-            %{[User]$_}
+      ConvertFrom-Json |
+      % { [User]$_ }
 
 }
 

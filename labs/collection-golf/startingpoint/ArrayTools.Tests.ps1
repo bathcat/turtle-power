@@ -54,12 +54,43 @@ Describe 'Select-Partitions' {
    It 'Should work for 1 partition' {
       $original = 2, 11
       $actual = Select-Partitons $original
-      
+
       for ( $i = 0; $i -lt $original.Length; $i++ ) {
          $actual[$i] | Should -Be $original[$i]
       }
    }
 
 
+}
+
+
+
+Describe 'Select-Flattened' {
+
+   It 'Should work on 1 dimension' {
+      $expected = 2, 3, 4, 5
+      $actual = Select-Flattened $expected
+
+      for ( $i = 0; $i -lt $original.Length; $i++ ) {
+         $expected[$i] | Should -Be $actual[$i]
+      }
+   }
+
+   It 'Should work on multi dimension' {
+      $original = @(
+         1,
+         @(2, 3),
+         @(),
+         @(
+            @(4)
+         )
+      )
+      $actual = Select-Flattened $original
+      $expected = 1,2,3,4
+
+      for ( $i = 0; $i -lt $original.Length; $i++ ) {
+         $expected[$i] | Should -Be $actual[$i]
+      }
+   }
 
 }

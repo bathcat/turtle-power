@@ -16,8 +16,8 @@ function Select-UniqueElements($Items) {
 
 <#
 .SYNOPSIS
-   Builds a new list with its 
-   contents identical to the specified 
+   Builds a new list with its
+   contents identical to the specified
    value.
 .INPUTS
    items (list): Some list

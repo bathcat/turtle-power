@@ -16,8 +16,8 @@ function Select-UniqueElements($Items) {
 
 <#
 .SYNOPSIS
-   Builds a new list with its 
-   contents identical to the specified 
+   Builds a new list with its
+   contents identical to the specified
    value.
 .INPUTS
    items (list): Some list
@@ -42,14 +42,14 @@ function Select-Partitons {
    param(
       $Items,
       $PartitionSize = 2
-  )
-  [array]$Rest = $Items
-  while($Rest.Length -gt $PartitionSize){
-      $Partition = $Rest[0..($PartitionSize-1)]
-      $Rest = $Rest[ $PartitionSize..($Rest.Length-1)]
+   )
+   [array]$Rest = $Items
+   while ($Rest.Length -gt $PartitionSize) {
+      $Partition = $Rest[0..($PartitionSize - 1)]
+      $Rest = $Rest[ $PartitionSize..($Rest.Length - 1)]
       Write-Output $Partition -NoEnumerate
-  }
-  Write-Output $Rest -NoEnumerate
+   }
+   Write-Output $Rest -NoEnumerate
 }
 
 
@@ -67,5 +67,33 @@ function Select-Partitons {
       no nesting
 #>
 function Select-Flattened($Items) {
-   return $Items
+   $Items | Write-Output
+}
+
+
+
+<#
+.SYNOPSIS
+   Creates a new, single-dimensional
+   containing all the non-list members
+   of the specified list.
+.INPUTS
+   List, possibly either
+      multi-dimensional or containing
+      nested lists.
+.OUTPUTS
+    1 list, same contents, same order,
+      no nesting
+.DESCRIPTION
+    This works fine, but it's not very idiomatic
+#>
+function Select-NieveFlattened($Items) {
+   foreach($item in $Items){
+      if($item -is [array]){
+         Select-Flattened $item
+      }
+      else{
+         Write-Output $item
+      }
+   }
 }

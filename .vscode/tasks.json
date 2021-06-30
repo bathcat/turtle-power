@@ -53,9 +53,10 @@
             "type": "shell",
             "command": "Invoke-ScriptAnalyzer -Path ./labs -Recurse -Settings ./PSScriptAnalyzerSettings.psd1 -ReportSummary",
             "presentation": {
-              "reveal": "always",
-              "panel": "new"
-            }
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
         },
         {
             "label": "Lint-Fix",

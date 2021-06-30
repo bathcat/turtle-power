@@ -1,3 +1,4 @@
+
 class Color{
    [ValidateRange(0, 255)]
    [int]$red
@@ -20,6 +21,21 @@ class Color{
 
 }
 
+<#
+.SYNOPSIS
+   Short description
+.DESCRIPTION
+   Long description
+.EXAMPLE
+   PS C:\> <example usage>
+   Explanation of what the example does
+.INPUTS
+   Inputs (if any)
+.OUTPUTS
+   Output (if any)
+.NOTES
+   General notes
+#>
 function Add-Darkness{
    [CmdletBinding()]
    [OutputType([Color])]
@@ -33,6 +49,8 @@ function Add-Darkness{
       blue = $original.blue + $amount
    }
 }
+
+Get-Help Add-Darkness
 
 <#
 .SYNOPSIS

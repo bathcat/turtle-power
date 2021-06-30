@@ -12,12 +12,10 @@ function Get-Partitions{
     Write-Output $Rest -NoEnumerate
 }
 
+$xs = 1,2,3,4,5,6,7,8,9
 
-$xs = 1,2,3,4,5
-
-$partitions = Get-Partitions $xs
+$partitions = Get-Partitions $xs 3
 
 foreach ($part in $partitions){
     "Partition: $part"
 }
-

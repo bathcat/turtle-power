@@ -19,14 +19,13 @@ function New-BigArray($max = 10000){
    return $xs
 }
 
-function New-BigArrayList($max = 10000){
-   $xs = [System.Collections.ArrayList]::new()
+function New-BigArrayList($max = 10000){   
+
+   [System.Collections.ArrayList]$xs = [System.Collections.ArrayList]::new()
    1..$max | %{$xs.Add("Value: $_")}
-   return $xs
+   #1..$max | %{$xs += "Value: $_"}
+   return [System.Collections.ArrayList]$xs
 }
+$al = New-BigArrayList
+$al.GetType()
 
-"`n`nHere's the array:"
-Invoke-Timer -ScriptBlock {New-BigArray > $null} -InformationAction Continue
-
-"`n`nHere's the array-list:"
-Invoke-Timer -ScriptBlock {New-BigArrayList > $null} -InformationAction Continue

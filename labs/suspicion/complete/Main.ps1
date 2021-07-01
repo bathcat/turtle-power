@@ -6,6 +6,8 @@
    Loooooooogs a suspicious file
 .EXAMPLE
    Lorem ipsum sic dolor
+.EXAMPLE
+   xyz
 #>
 function Write-SuspicionLog{
    [CmdletBinding()]

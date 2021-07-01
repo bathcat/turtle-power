@@ -1,21 +1,22 @@
-﻿function Get-Update{
-    [OutputType([string])]
-    [CmdletBinding()]
-    param(
-      [Parameter(Mandatory)]
-      [ValidateLength(10, 100)]
-      [string] $Message,
-  
-      [Parameter(Mandatory)]
-      [ValidateSet('Low', 'Medium', 'High')]
-      [string] $Severity,
-  
-       [Parameter(Mandatory)]
-       [ValidateScript( { Test-Path $_ } )]
-      [string] $Path
-    )
-    return "$Severity - $Message - $Path"
+﻿[Flags()]enum Fixins{
+  None =0
+  Onion = 1
+  Mustard = 2
+  Pickles = 4
+  Tomato = 8
+
+}
+function New-Burger{
+  Param(
+    [Fixins]$Fixins=15
+  )
+  "New burger with $Fixins!"
 }
 
-Get-Update -Message 'There is no spoon!!!!' -Severity 'Medium' -Path 'c:/temp'
+[Fixins]$asEnumValue = 'Onion', 'Tomato'
+[int]$asIntMask = $asEnumValue
+[string]$asString = $asEnumValue
 
+foreach($f in $asStrings){
+  Write-Host "Fixin: $f"
+}

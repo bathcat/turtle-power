@@ -1,3 +1,3 @@
-using module './Get-Fortune.ps1'
+Import-Module './Get-Fortune.ps1' -Force
 
 Get-Fortune

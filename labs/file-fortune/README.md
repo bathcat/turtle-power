@@ -13,11 +13,14 @@ you your fortune. Woo!
   - One fortune per line
 * Pick a line at random
 * Display in on the terminal
+* Create unit tests with Pester
+  - Mock dependencies like `Get-Random` and `Get-Content`
 
 
 ## Stretch Goals
 * Make sure to clean up resources
 * Anticipate the possibility of failure
+  - Write a Pester test checking for the desired failure response
 * Parse the actual `fortunes` data file used by the unix app
   - Located here: `_assets/fortunes`
   - Fortunes delimited by '%'

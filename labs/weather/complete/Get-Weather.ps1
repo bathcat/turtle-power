@@ -1,13 +1,30 @@
 ﻿Set-StrictMode -Version Latest
 
+
+<#
+.SYNOPSIS
+   Describes a satitude/longitude pair.
+.NOTES
+   Ranges come from here:
+      https://stackoverflow.com/questions/15965166/what-are-the-lengths-of-location-coordinates-latitude-and-longitude
+#>
 class Point {
-   [int]$latitude
+   [ValidateRange(-90,90)]
+   [float]$latitude
+
+   [ValidateRange(-180,180)]
    [int]$longitude
 }
 
+<#
+.SYNOPSIS
+   Describes a location on the National Weather Service grid
+#>
 class GridLocation {
    [int] $x
    [int] $y
+
+   [ValidateLength(3)]
    [string] $office
 }
 
@@ -33,13 +50,12 @@ function Get-GridLocation {
       [Point]$point
    )
    process {
-      Set-StrictMode -Version Latest
       $uri = "https://api.weather.gov/points/$($point.latitude),$($point.longitude)"
       $json = Invoke-RestMethod $uri
       return [GridLocation]@{
-         x = $json.properties.gridX;
-         y = $json.properties.gridY;
-         office = $json.properties.cwa;
+         x = $json.properties.gridX
+         y = $json.properties.gridY
+         office = $json.properties.cwa
       }
    }
 }

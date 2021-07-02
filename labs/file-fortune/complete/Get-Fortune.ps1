@@ -1,5 +1,4 @@
-﻿Set-StrictMode -Version Latest 
-
+﻿Set-StrictMode -Version Latest
 
 $path = Split-Path $PSCommandPath |
    Split-Path |

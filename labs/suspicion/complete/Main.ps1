@@ -9,22 +9,22 @@
 .EXAMPLE
    xyz
 #>
-function Write-SuspicionLog{
+function Write-SuspicionLog {
    [CmdletBinding()]
    [OutputType([void])]
    param(
       [Parameter(Mandatory)]
-      [ValidateScript({Test-Path $_})]
+      [ValidateScript( { Test-Path $_ })]
       [string]$Path,
 
       [Parameter(Mandatory)]
       [ValidateLength(5, 100)]
-      [string]$Message, 
+      [string]$Message,
 
       [Parameter(Mandatory)]
-      [ValidateRange(1,10)]
+      [ValidateRange(1, 10)]
       [int]$Severity,
-      
+
       [Parameter(Mandatory)]
       [ValidateSet("Bad Smell", "Funny Look")]
       $Category

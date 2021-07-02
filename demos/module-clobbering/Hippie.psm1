@@ -7,4 +7,6 @@ function Get-Greeting{
     return "$greeting, $Name"
 }
 
-Export-ModuleMember Get-Greeting
+Export-ModuleMember -Function Get-Greeting
+
+

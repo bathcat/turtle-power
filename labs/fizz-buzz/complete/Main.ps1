@@ -6,7 +6,6 @@
    )
 
    process {
-      Write-Information "i is $i"
       if ( $i % 15 -eq 0  ) {
          return 'fizzbuzz';
       }
@@ -24,4 +23,4 @@
 }
 
 
-1..100 | Get-Message -InformationAction 
+1..100 | Get-Message 

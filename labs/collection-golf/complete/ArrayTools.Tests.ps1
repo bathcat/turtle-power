@@ -71,7 +71,7 @@ Describe 'Select-Flattened' {
       $expected = 2, 3, 4, 5
       $actual = Select-Flattened $expected
 
-      for ( $i = 0; $i -lt $original.Length; $i++ ) {
+      for ( $i = 0; $i -lt $expected.Length; $i++ ) {
          $expected[$i] | Should -Be $actual[$i]
       }
    }
@@ -86,7 +86,7 @@ Describe 'Select-Flattened' {
          )
       )
       $actual = Select-Flattened $original
-      $expected = 1,2,3,4
+      $expected = 1, 2, 3, 4
 
       for ( $i = 0; $i -lt $original.Length; $i++ ) {
          $expected[$i] | Should -Be $actual[$i]

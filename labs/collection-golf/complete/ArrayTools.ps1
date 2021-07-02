@@ -88,11 +88,11 @@ function Select-Flattened($Items) {
     This works fine, but it's not very idiomatic
 #>
 function Select-NieveFlattened($Items) {
-   foreach($item in $Items){
-      if($item -is [array]){
+   foreach ($item in $Items) {
+      if ($item -is [array]) {
          Select-Flattened $item
       }
-      else{
+      else {
          Write-Output $item
       }
    }

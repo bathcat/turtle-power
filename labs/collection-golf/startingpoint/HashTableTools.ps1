@@ -1,7 +1,7 @@
 ﻿
 <#
 .SYNOPSIS
-   Builds a hash table with the number of occurrences 
+   Builds a hash table with the number of occurrences
    of each item in the input
 .INPUTS
    Items (list): List, possibly containing duplicate values

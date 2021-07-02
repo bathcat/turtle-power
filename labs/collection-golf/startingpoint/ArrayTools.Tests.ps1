@@ -22,7 +22,6 @@ Describe 'Select-UniqueElements' {
          Should -Be 1, 7, 4, 88
    }
 
-
 }
 
 
@@ -35,7 +34,6 @@ Describe 'Get-Clone' {
       for ( $i = 0; $i -lt $original.Length; $i++ ) {
          $clone[$i] | Should -Be $original[$i]
       }
-
    }
 
    It 'Should be a different container' {
@@ -44,7 +42,6 @@ Describe 'Get-Clone' {
 
       [System.Object]::Equals($original, $clone) |
          Should -BeFalse
-
    }
 
 }
@@ -59,7 +56,6 @@ Describe 'Select-Partitions' {
          $actual[$i] | Should -Be $original[$i]
       }
    }
-
 
 }
 
@@ -86,7 +82,7 @@ Describe 'Select-Flattened' {
          )
       )
       $actual = Select-Flattened $original
-      $expected = 1,2,3,4
+      $expected = 1, 2, 3, 4
 
       for ( $i = 0; $i -lt $original.Length; $i++ ) {
          $expected[$i] | Should -Be $actual[$i]

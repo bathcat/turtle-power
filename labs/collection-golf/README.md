@@ -9,7 +9,7 @@ naive list functions and the unit tests are
 failing. 
 
 Your job is to fix the functions in the
-ArrayTools.ps1 script so the tests pass.
+ArrayTools.ps1 and HashTableTools.ps1 so the tests pass.
 
 
 ## Requirements   

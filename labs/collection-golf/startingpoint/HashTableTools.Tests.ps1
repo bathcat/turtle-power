@@ -10,11 +10,11 @@ Describe 'Select-Counts' {
    }
 
    It 'Should add properly' {
-      [hashtable]$actual = Select-Counts 'moon',1,3.14,1,'moon','moon',13, 13,13,13
+      [hashtable]$actual = Select-Counts 'moon', 1, 3.14, 1, 'moon', 'moon', 13, 13, 13, 13
       $actual[1] | Should -Be 2
       $actual[3.14] | Should -Be 1
       $actual['moon'] | Should -Be 3
-      $actual[13] | Should -Be 4         
+      $actual[13] | Should -Be 4
    }
 
 

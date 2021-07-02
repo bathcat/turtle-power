@@ -30,7 +30,21 @@ function Write-SuspicionLog {
       $Category
    )
 
-   Write-Host "Suspicious File! | $Message | $Category | $Severity | $Path"
+   $delimiter = ' | '
+   
+   Write-Host "Suspicious File!" -BackgroundColor DarkGray -NoNewline -ForegroundColor DarkRed
+   Write-Host $delimiter -NoNewline
+
+   Write-Host $Message -NoNewline
+   Write-Host $delimiter -NoNewline
+   
+   Write-Host $Category -NoNewline -ForegroundColor Red
+   Write-Host $delimiter -NoNewline 
+   
+   Write-Host $Severity -NoNewline
+   Write-Host $delimiter -NoNewline
+   
+   Write-Host $Path
 }
 
 Write-SuspicionLog -Path C:\Users `

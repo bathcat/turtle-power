@@ -87,7 +87,7 @@ function Select-Flattened($Items) {
 .DESCRIPTION
     This works fine, but it's not very idiomatic
 #>
-function Select-NieveFlattened($Items) {
+function Select-NaiveFlattened($Items) {
    foreach ($item in $Items) {
       if ($item -is [array]) {
          Select-Flattened $item

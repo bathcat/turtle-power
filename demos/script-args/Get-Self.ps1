@@ -1,4 +1,0 @@
-Param(
-   $Self
-)
-return $Self

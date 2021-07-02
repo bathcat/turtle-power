@@ -33,6 +33,7 @@ function Get-GridLocation {
       [Point]$point
    )
    process {
+      Set-StrictMode -Version Latest
       $uri = "https://api.weather.gov/points/$($point.latitude),$($point.longitude)"
       $json = Invoke-RestMethod $uri
       return [GridLocation]@{
@@ -62,7 +63,5 @@ function Get-Forecast {
 function Get-Weather {
    return Get-CurrentLocation |
       Get-GridLocation |
-   Get-Forecast
+      Get-Forecast
 }
-
-Get-Weather

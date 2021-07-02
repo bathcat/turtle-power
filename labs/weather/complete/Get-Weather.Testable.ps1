@@ -24,6 +24,7 @@ function Get-CurrentLocation {
 }
 
 function Get-GridLocationUri {
+
    [OutputType([string])]
    Param(
       [Parameter(ValueFromPipeline = $true)]
@@ -81,5 +82,3 @@ function Get-Weather {
       Get-GridLocation |
       Get-Forecast
 }
-
-Get-Weather

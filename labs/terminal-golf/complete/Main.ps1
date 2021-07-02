@@ -42,7 +42,7 @@ Stop-Process -Name notepad
 
 #
 # 5. Display the contents of this file: https://www.gutenberg.org/files/1322/1322-0.txt
-
+#
 
 Invoke-RestMethod https://www.gutenberg.org/files/1322/1322-0.txt
 
@@ -50,10 +50,11 @@ Invoke-RestMethod https://www.gutenberg.org/files/1322/1322-0.txt
 
 #
 # 6. Get all warnings from the System event log since the beginning of the month.
+#
 
-
-Get-EventLog -EntryType Warning -LogName System -After '05-01-2021'
-
+Get-WinEvent -LogName System | 
+    ? LevelDisplayName -eq Warning | 
+    ? TimeCreated -gt '07-02-2021'
 
 
 #
@@ -69,7 +70,7 @@ New-Item -ItemType SymbolicLink -Path ~/Desktop/Docs -Target ~/Documents/
 
 #
 # 8. Set your execution policy to 'RemoteSigned'-- Windows only)
-
+#
 
 ## First start a new terminal as administrator, then run:
 
@@ -77,7 +78,7 @@ Set-ExecutionPolicy RemoteSigned
 
 
 
-
+#
 # 9. Set up your profile with a custom welcome banner. Something like:
 #      'Hello, Mr. Bloggs. Welcome to Powershell.'
 

@@ -24,7 +24,7 @@ class GridLocation {
    [int] $x
    [int] $y
 
-   [ValidateLength(3)]
+   [ValidateLength(3,3)]
    [string] $office
 }
 

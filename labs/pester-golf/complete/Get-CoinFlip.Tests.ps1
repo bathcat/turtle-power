@@ -4,9 +4,7 @@
 
 Describe 'Get-CoinFlip' {
 
-
-
-   It 'Should be consistent with constant -Seed parameter' {
+   It 'Should be consistent with controlled randomness' {
       # Arrange
       $samples = 100
       $seed = Get-Random -Maximum 1.0 -Minimum 0.0
@@ -19,7 +17,7 @@ Describe 'Get-CoinFlip' {
       $rest | % { $_ | Should -Be $first }
    }
 
-   It 'Should be roughly 50% with default parameter' {
+   It 'Should be roughly 50/50 with actual randomness' {
       # Arrange
       $samples = 500
       $window = .2

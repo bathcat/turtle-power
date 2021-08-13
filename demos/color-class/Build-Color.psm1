@@ -21,6 +21,8 @@ class Color{
 
 }
 
+Write-Host "`n`nWheeeee!`n`n" -BackgroundColor Green
+
 <#
 .SYNOPSIS
    Short description
@@ -49,8 +51,6 @@ function Add-Darkness{
       blue = $original.blue + $amount
    }
 }
-
-Get-Help Add-Darkness
 
 <#
 .SYNOPSIS
@@ -84,3 +84,4 @@ function Build-Color {
       blue = $blue
    }
 }
+

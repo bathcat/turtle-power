@@ -38,7 +38,7 @@ function Get-Clone($Items) {
 .OUTPUTS
   list: List of partitions (which are lists)
 #>
-function Select-Partitons($Items, $PartitionSize = 2) {
+function Select-Partitoned($Items, $PartitionSize = 2) {
    Write-Output $Self
 }
 

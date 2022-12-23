@@ -53,7 +53,7 @@ Describe 'Select-Partitions' {
 
    It 'Should work for 1 partition' {
       $original = 2, 11
-      $actual = Select-Partitons $original
+      $actual = Select-Partitoned $original
 
       for ( $i = 0; $i -lt $original.Length; $i++ ) {
          $actual[$i] | Should -Be $original[$i]

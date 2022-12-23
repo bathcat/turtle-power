@@ -25,7 +25,7 @@ Install-Module -Name Pester -Force
 
 4. To make sure everything works, run an arbitrary test suite:
 ```powershell
-Invoke-Pester ./labs/fibs/complete/Get-Fibs.Tests.ps1
+Invoke-Pester ./labs/fibs/complete/Get-Fibonacci.Tests.ps1
 ```
 
 5. (Optional) Install [Windows Terminal >=1.9](https://devblogs.microsoft.com/commandline/windows-terminal-preview-1-9-release/)

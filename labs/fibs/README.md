@@ -41,7 +41,7 @@ function Get-Term($position){
   if($position -eq 1){
     return 2
   }
-  return (Get-Fibs ($position - 1)) + (Get-Fibs ($position - 2))
+  return (Get-Fibonacci ($position - 1)) + (Get-Fibonacci ($position - 2))
 }
 ```
 * Read up here: https://www.phillipsj.net/posts/memoization-in-powershell/

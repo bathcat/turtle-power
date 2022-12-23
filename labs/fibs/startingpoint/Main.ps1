@@ -1,12 +1,12 @@
 ﻿$limit = 4e6
 
-function Get-Fibs() {
+function Get-Fibonacci() {
    return 1, 2, 3, 5, 8, 13, 21, 34, 55, 89
 }
 
 function Get-Euler02Solution() {
    $sum = 0
-   Get-fibs | % { $sum += $_ }
+   Get-Fibonacci | % { $sum += $_ }
    return $sum
 }
 

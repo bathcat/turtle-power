@@ -4,10 +4,10 @@
 .SYNOPSIS
   Gets terms of the fibonacci sequence
 .EXAMPLE
-  PS C:\> Get-Fibs 50
+  PS C:\> Get-Fibonacci 50
   Gets the first 50 terms
 #>
-function Get-Fibs($count) {
+function Get-Fibonacci($count) {
    $previous = 1
    $current = 2
 

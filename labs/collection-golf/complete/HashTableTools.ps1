@@ -8,7 +8,7 @@
 .OUTPUTS
    Table: e.g. @{planet=12;moon=33}
 #>
-function Select-Counts($Items) {
+function Select-Counted($Items) {
    $counts = @{}
 
    foreach ($item in $Items) {

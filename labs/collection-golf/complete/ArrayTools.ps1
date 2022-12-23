@@ -8,7 +8,7 @@
 .OUTPUTS
    list: Subset, in the same order, with no duplicates.
 #>
-function Select-UniqueElements($Items) {
+function Select-Unique($Items) {
    return $Items | Select-Object -Unique
 }
 

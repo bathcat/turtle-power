@@ -2,23 +2,23 @@
    Import-Module -Force $PSCommandPath.Replace('.Tests.ps1', '.ps1')
 }
 
-Describe 'Select-UniqueElements' {
+Describe 'Select-Unique' {
 
    It 'Should be empty for empty' {
-      Select-UniqueElements @() | Should -Be @()
+      Select-Unique @() | Should -Be @()
    }
 
    It 'Should be empty for empty' {
       $expected = 1, 2, 3, 4
-      Select-UniqueElements $expected | Should -Be $expected
+      Select-Unique $expected | Should -Be $expected
    }
 
    It 'Should do a single member right' {
-      Select-UniqueElements 1, 1, 1, 1 | Should -Be 1
+      Select-Unique 1, 1, 1, 1 | Should -Be 1
    }
 
    It 'Should handle multiple duplicates' {
-      Select-UniqueElements 1, 1, 1, 7, 1, 4, 7, 88, 1 |
+      Select-Unique 1, 1, 1, 7, 1, 4, 7, 88, 1 |
          Should -Be 1, 7, 4, 88
    }
 

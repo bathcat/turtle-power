@@ -1,6 +1,6 @@
 # Lab: List Golf
 
-## Summary 
+## Summary
 
 You're working on an existing application
 that was built-- for the most part-- by 

@@ -21,7 +21,7 @@ An example
 .NOTES
 General notes
 #>
-function Get-Users {
+function Get-User {
    [OutputType([User[]])]
    Param(
       [Parameter(Mandatory)]
@@ -34,4 +34,4 @@ function Get-Users {
 
 }
 
-Export-ModuleMember Get-Users
+Export-ModuleMember Get-User

@@ -7,9 +7,7 @@ To get my setup:
 
 1. Install Powershell >7 via [Github](https://github.com/PowerShell/PowerShell)
 
-2. Uninstall the old version of Pester that came with the old powershell as described [here](https://pester.dev/docs/introduction/installation). **Note:** If Pester *isn't* already installed, you can skip this step.
-
-Here's the script:
+2. Uninstall the old version of Pester that came with the old powershell as described [here](https://pester.dev/docs/introduction/installation). (**Note:** If Pester *isn't* already installed, you can skip this step.) Here's the script:
 ```powershell
 $module = "C:\Program Files\WindowsPowerShell\Modules\Pester"
 takeown /F $module /A /R

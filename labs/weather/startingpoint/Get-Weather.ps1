@@ -20,6 +20,6 @@ function Get-Forecast($office, $x, $y) {
 function Get-Weather {
    $here = Get-CurrentLocation
    $hereOnGrid = Get-GridLocation $here.latitude $here.longitude
-   return Get-Forecast $hereOnGrid.office $hereOnGrid.x $hereOnGrid.y
+   return Get-Forecast -office $hereOnGrid.office -x $hereOnGrid.x -y $hereOnGrid.y
 }
 

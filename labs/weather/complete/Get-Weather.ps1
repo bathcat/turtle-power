@@ -9,10 +9,10 @@
       https://stackoverflow.com/questions/15965166/what-are-the-lengths-of-location-coordinates-latitude-and-longitude
 #>
 class Point {
-   [ValidateRange(-90,90)]
+   [ValidateRange(-90, 90)]
    [float]$latitude
 
-   [ValidateRange(-180,180)]
+   [ValidateRange(-180, 180)]
    [int]$longitude
 }
 
@@ -24,7 +24,7 @@ class GridLocation {
    [int] $x
    [int] $y
 
-   [ValidateLength(3,3)]
+   [ValidateLength(3, 3)]
    [string] $office
 }
 

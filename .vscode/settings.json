@@ -1,5 +1,4 @@
 {
-
-  "files.defaultLanguage": "powershell"
+  "files.defaultLanguage": "powershell",
+  "editor.formatOnSave": true,
 }
- 

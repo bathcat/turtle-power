@@ -1,4 +1,11 @@
 {
   "files.defaultLanguage": "powershell",
   "editor.formatOnSave": true,
+  "powershell.codeFormatting.pipelineIndentationStyle": "IncreaseIndentationForFirstPipeline",
+  "powershell.codeFormatting.useCorrectCasing": true,
+  "powershell.codeFormatting.trimWhitespaceAroundPipe": true,
+  "powershell.codeFormatting.whitespaceBetweenParameters": true,
+  "powershell.codeFormatting.useConstantStrings": true,
+  "powershell.debugging.createTemporaryIntegratedConsole": true,
+  "powershell.integratedConsole.suppressStartupBanner": true
 }

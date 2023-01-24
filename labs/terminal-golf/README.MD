@@ -6,7 +6,7 @@ These are a few exercises for getting familiar with the Powershell terminal if y
 never used it-- or as a refresher if you have. Try to use the built-in help system, and
 rely on Google as a backup plan.
     
-## Reqirements
+## Requirements
 1. Use the help system to find examples of how to use this command: 
     `Invoke-RestMethod`
 

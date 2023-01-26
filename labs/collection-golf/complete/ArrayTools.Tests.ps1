@@ -8,7 +8,7 @@ Describe 'Select-Unique' {
       Select-Unique @() | Should -Be @()
    }
 
-   It 'Should be empty for empty' {
+   It 'Should be not empty for not empty' {
       $expected = 1, 2, 3, 4
       Select-Unique $expected | Should -Be $expected
    }

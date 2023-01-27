@@ -1,12 +1,16 @@
-[Flags()] enum Fixins {
-   None = 0
-   Pickles = 1
-   Onions = 2
-   AnimalStyle = 3
-   Mustard = 4
-   Everything = 7
+function Get-Total {
+   begin {
+      $total = 0
+   }
+   process {
+      $total += $_
+   }
+   end {
+      return $total
+   }
 }
 
-[Fixins]$fixins = 'AnimalStyle'
-
-Write-Host $fixins
+Get-Process |
+   ? { $_.Name -eq 'Chrome' } |
+   % { $_.WorkingSet } |
+   Get-Total
